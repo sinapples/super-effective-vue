@@ -3,7 +3,7 @@
     <v-row class="text-center">
       <v-col class="mb-4">
         <v-card>
-          <v-card-title>What is the Pokemon's Type {{ selected }}</v-card-title>
+          <v-card-title>Select the Pokemon Type {{ selected }}</v-card-title>
 
           <v-card-text>
             <v-row>
@@ -17,7 +17,7 @@
             </v-row>
           </v-card-text>
 
-          <h2>Weak to</h2>
+          <h2> {{selectedTypeString()}} is weak to</h2>
           <v-card-text>
             <v-row v-if="effectiveness">
               <span v-for="type in Object.keys(effectiveness.max)" :key="type">
@@ -96,6 +96,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import util from '@/utils/effectiveness'
+import lang from '@/utils/languageUtils'
 import TypeIcon from './TypeIcon.vue'
 
 export default Vue.extend({
@@ -183,12 +184,13 @@ export default Vue.extend({
     },
     format(type){
       return type.charAt(0).toUpperCase() + type.substring(1)
-    }
+    },
 
 
-    // selectedTypeString() {
-    //   // const secondType =
-    // }
+    selectedTypeString() {
+    
+    return lang.addAnd(this.selected)
+    },
   }
 })
 </script>
