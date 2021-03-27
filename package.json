@@ -113,21 +113,10 @@
   },
   "_id": "super-effective@1.0.0",
   "bundlesize": [
-    {
-      "path": "./dist/js/chunk-vendors*.js",
-      "maxSize": "125 kB"
-    },
-    {
-      "path": "./dist/js/chunk-firestore*.js",
-      "maxSize": "95 kB"
-    },
+ 
     {
       "path": "./dist/js/app*.js",
       "maxSize": "15 kB"
-    },
-    {
-      "path": "./dist/js/client-chunk-*.js",
-      "maxSize": "6 kB"
     }
   ],
   "engines": {
