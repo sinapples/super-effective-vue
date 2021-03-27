@@ -1,17 +1,13 @@
 <template>
-  <div class="page-wrapper">
-    <Dashboard />
-  </div>
+  <v-card>
+    <v-card-title>about </v-card-title>
+  </v-card>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import Dashboard from '@/components/Dashboard.vue'
 
 export default {
-  components: {
-    Dashboard
-  },
   head() {
     return {
       title: {

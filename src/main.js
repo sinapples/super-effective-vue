@@ -6,12 +6,12 @@ import store from './store'
 import '@/misc/register-service-worker'
 import '@/misc/handle-network-status'
 import '@/firebase/init'
-import '@/firebase/authentication'
+ 
 import '@/misc/handle-apple-install-prompt'
 import 'pwacompat'
 import vuetify from './plugins/vuetify'
 import '@babel/polyfill'
-import 'roboto-fontface/css/roboto/roboto-fontface.css'
+// import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import '@mdi/font/css/materialdesignicons.css'
 
 Vue.config.productionTip = false
@@ -24,9 +24,4 @@ new Vue({
 }).$mount('#app')
 
 // eslint-disable-next-line no-console
-console.info(`
-🍱 This app was bootstrapped with bento-starter 🍱
-
-👉 https://bento-starter.netlify.com/
-
-`)
+ 

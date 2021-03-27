@@ -1,4 +1,5 @@
 <template>
+<v-app>
   <div id="app">
     <nav-bar></nav-bar>
     <div class="main-wrapper">
@@ -18,6 +19,7 @@
     >
     </apple-add-to-home-screen-modal>
   </div>
+  </v-app>
 </template>
 <script>
 import NavBar from '@/components/NavBar'
