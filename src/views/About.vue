@@ -1,6 +1,23 @@
 <template>
   <v-card>
-    <v-card-title>about </v-card-title>
+    <v-card-title>Thanks for using Super Effective </v-card-title>
+    <v-card-text>
+      Hi, I'm Josh!
+      <p>
+        If you like this app you can support me sending me some boba
+      </p></v-card-text
+    >
+
+    <v-card-actions
+      ><v-btn
+        color="primary"
+        block
+        href="https://www.buymeacoffee.com/sinapples"
+        target="_blank"
+      >
+        Buy me some boba?
+      </v-btn></v-card-actions
+    >
   </v-card>
 </template>
 
@@ -27,8 +44,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- 
-
 .page-wrapper {
   display: flex;
   flex-direction: column;
