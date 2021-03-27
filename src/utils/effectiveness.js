@@ -87,6 +87,28 @@ const typeTable = {
   dark: { fighting: 2, bug: 2, ghost: 0.5, psychic: 0, dark: 0.5, fairy: 2 },
   fairy: { fighting: 0.5, poison: 2, bug: 0.5, steel: 2, dragon: 0, dark: 0.5 }
 }
+
+const types = [
+  'water',
+  'bug',
+  'fire',
+  'dark',
+  'grass',
+  'dragon',
+  'electric',
+  'fairy',
+  'fighting',
+  'flying',
+  'ghost',
+  'ground',
+  'ice',
+  'normal',
+  'poison',
+  'psychic',
+  'rock',
+  'steel'
+]
+
 function sortEffectiveness(json, type, effectiveness) {
   // console.log("sorting " + type + " " + effectiveness )
   switch (effectiveness) {
@@ -106,10 +128,13 @@ function sortEffectiveness(json, type, effectiveness) {
   }
 }
 function superEffective(type1, type2) {
+  // If the first parameter is empty get the second parameter
   type1 = type1.toLowerCase() ? type1.toLowerCase() : type2.toLowerCase()
+
+  // If both parameters are the same remove type2
   type2 = type2.toLowerCase() === type1 ? '' : type2.toLowerCase()
 
-  console.log(`${type1} ${type2}`)
+  // console.log(`${type1} ${type2}`)
 
   const effectiveTable = {
     max: {},
@@ -117,65 +142,45 @@ function superEffective(type1, type2) {
     notVery: {},
     noEffect: {}
   }
-  const counters = {}
 
+  // Return if there were no types given
+  if (!type1 && !type2) {
+    return effectiveTable
+  }
+
+  // Unstructured list of counters
+  let counters = {}
+
+  // Stores the effectiveness of the given types
   const typeMap1 = typeTable[type1]
   const typeMap2 = typeTable[type2]
 
-  Object.keys(typeMap1).forEach(type => {
-    if (typeMap2 && typeMap2[type]) {
-      const effectiveness = typeMap1[type] * typeMap2[type]
-      if (effectiveness !== 1) {
-        // addEffectiveness(counters, type, effectiveness);
-        counters[type] = effectiveness
-      }
-    } else {
-      // addEffectiveness(counters, type, typeMap1[type]);
-      counters[type] = typeMap1[type]
-    }
-  })
-
-  // for (const type in typeMap1) {
-  //   if (typeMap2 && typeMap2[type]) {
-  //     const effectiveness = typeMap1[type] * typeMap2[type]
-  //     if (effectiveness !== 1) {
-  //       // addEffectiveness(counters, type, effectiveness);
-  //       counters[type] = effectiveness
-  //     }
-  //   } else {
-  //     // addEffectiveness(counters, type, typeMap1[type]);
-  //     counters[type] = typeMap1[type]
-  //   }
-  // }
-
-  // if theres a dual type
+  // If 2 types were given
   if (type2) {
-    Object.keys(typeMap2).forEach(type => {
-      // console.log(type)
-      // console.log(typeMap1[type])
-      if (typeMap1[type] !== null) {
-        const effectiveness = typeMap1[type] * typeMap2[type]
-        console.log(`  >>${effectiveness}`)
-        if (effectiveness !== 1) {
-          //  addEffectiveness(counters, type, effectiveness);
-          counters[type] = effectiveness
-        }
-      } else {
-        // console.log("  >>")
-        //  addEffectiveness(counters, type, typeMap2[type]);
+    for (let index = 0; index < types.length; index += 1) {
+      const type = types[index]
+      if (
+        Object.prototype.hasOwnProperty.call(typeMap1, type) &&
+        Object.prototype.hasOwnProperty.call(typeMap2, type)
+      ) {
+        counters[type] = typeMap1[type] * typeMap2[type]
+      } else if (Object.prototype.hasOwnProperty.call(typeMap1, type)) {
+        counters[type] = typeMap1[type]
+      } else if (Object.prototype.hasOwnProperty.call(typeMap2, type)) {
         counters[type] = typeMap2[type]
       }
-      // console.log();
-    })
+    }
+  }
+  // Only one type was given
+  else {
+    counters = typeMap1
   }
 
-  // for (const type in counters) {
+  // Structure the effectiveness data
   Object.keys(counters).forEach(type => {
     sortEffectiveness(effectiveTable, type, counters[type])
   })
 
-  console.log(`${type1} ${type2}:`)
-  console.log(JSON.stringify(effectiveTable, null, 2))
   return effectiveTable
 }
 
