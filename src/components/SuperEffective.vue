@@ -2,10 +2,10 @@
   <v-container>
     <v-row class="text-center">
       <v-col class="mb-4">
-        <v-card>
+        <v-card max-width="500">
           <v-card-title>Select the Pokemon Type {{ selected }}</v-card-title>
 
-          <v-card-text>
+          <v-card-text class="align-center">
             <v-row>
               <span v-for="type in types" :key="type.name">
                 <TypeIcon
@@ -17,13 +17,13 @@
             </v-row>
           </v-card-text>
 
-          <h2> {{selectedTypeString()}} is weak to</h2>
+          <h2>{{ selectedTypeString() }}</h2>
           <v-card-text>
             <v-row v-if="effectiveness">
               <span v-for="type in Object.keys(effectiveness.max)" :key="type">
                 <span v-if="type">
                   <TypeIcon
-                 :type="format(type)"
+                    :type="format(type)"
                     :selected="false"
                     effective-color="orange"
                     @typeSelected="updateSelection"
@@ -50,7 +50,7 @@
           <v-expansion-panels accordion>
             <v-expansion-panel>
               <v-expansion-panel-header class="text-center">
-                <!-- <h2>{{ selectedTypeString() }} Resist</h2> -->
+                <h2>See Resistances</h2>
               </v-expansion-panel-header>
               <v-expansion-panel-content>
                 <v-card-text>
@@ -61,7 +61,7 @@
                     >
                       <span v-if="type">
                         <TypeIcon
-                         :type="format(type)"
+                          :type="format(type)"
                           :selected="false"
                           effective-color="orange"
                           @typeSelected="updateSelection"
@@ -75,7 +75,7 @@
                     >
                       <span v-if="type">
                         <TypeIcon
-                       :type="format(type)"
+                          :type="format(type)"
                           :selected="false"
                           effective-color="green"
                           @typeSelected="updateSelection"
@@ -182,15 +182,15 @@ export default Vue.extend({
       )
       // console.log(JSON.stringify(this.effectiveness))
     },
-    format(type){
+    format(type) {
       return type.charAt(0).toUpperCase() + type.substring(1)
     },
 
-
     selectedTypeString() {
-    
-    return lang.addAnd(this.selected)
-    },
+      const selectedTypes = lang.addAnd(this.selected, false)
+
+      return selectedTypes ? `${selectedTypes} is weak to` : ''
+    }
   }
 })
 </script>

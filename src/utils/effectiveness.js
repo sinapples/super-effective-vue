@@ -107,7 +107,7 @@ function sortEffectiveness(json, type, effectiveness) {
 }
 function superEffective(type1, type2) {
   type1 = type1.toLowerCase() ? type1.toLowerCase() : type2.toLowerCase()
-  type2 = type2.toLowerCase()
+  type2 = type2.toLowerCase() === type1 ? '' : type2.toLowerCase()
 
   console.log(`${type1} ${type2}`)
 

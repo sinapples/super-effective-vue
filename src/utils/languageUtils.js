@@ -1,4 +1,4 @@
-function addAnd(list) {
+function addAnd(list, addComma = true) {
   list = list.filter(Boolean)
   const numberOfItems = list.length
 
@@ -7,13 +7,14 @@ function addAnd(list) {
   }
 
   let ret = ''
+  const comma = addComma ? ',' : ''
 
-  for (let i = 0; i < numberOfItems; i+=1) {
+  for (let i = 0; i < numberOfItems; i += 1) {
     ret += ' '
     if (i === numberOfItems - 2 && !(numberOfItems <= 1)) {
-      ret = `${ret + list[i]}, and`
+      ret = `${ret + list[i] + comma} and`
     } else if (numberOfItems > 1 && i !== numberOfItems - 1) {
-      ret = `${ret + list[i]},`
+      ret = `${ret + list[i] + comma}`
     } else {
       ret += list[i]
     }
@@ -32,7 +33,7 @@ function addOr(list) {
 
   let ret = ''
 
-  for (let i = 0; i < numberOfItems; i+=1) {
+  for (let i = 0; i < numberOfItems; i += 1) {
     ret += ' '
     if (i === numberOfItems - 2 && !(numberOfItems <= 1)) {
       ret = `${ret + list[i]}, or`
@@ -75,14 +76,13 @@ function removeLast(text) {
 function capitalizeWords(text) {
   const words = text.split(' ')
   let ret = ''
-  
+
   Object.keys(words).forEach(i => {
     ret += `${capitalize(words[i])} `
   })
 
   return removeLast(ret)
 }
-
 
 function titleCase(text) {
   const noCap = ['and', 'the', 'or']
@@ -100,7 +100,6 @@ function titleCase(text) {
 
   return capitalize(ret.trim())
 }
-
 
 module.exports = {
   singularOrPlural: singularPlural,
