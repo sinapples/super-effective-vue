@@ -11,8 +11,9 @@
       />
 
       <span :style="textColor()">
-        {{ type  }}
+        {{ type }}
       </span>
+      <div v-if="effectiveness" :style="textColor()">{{ effectiveness }}</div>
     </v-card>
   </span>
 </template>
@@ -28,7 +29,9 @@ export default Vue.extend({
   props: {
     type: String,
     selected: Boolean,
-    effectiveColor: String
+    effectiveColor: String,
+    selectable: Boolean,
+    effectiveness: String
   },
 
   data: () => ({
@@ -48,18 +51,19 @@ export default Vue.extend({
 
   methods: {
     onClick() {
-      this.$emit('typeSelected', this.type)
+      if (this.selectable) {
+        this.$emit('typeSelected', this.type)
+      }
     },
     getColor() {
-
-      let ret = ""
-      if(this.effectiveColor){
-        ret =this.effectiveColor
-      }else if(this.selected){
-        ret = "blue"
+      let ret = ''
+      if (this.effectiveColor) {
+        ret = this.effectiveColor
+      } else if (this.selected) {
+        ret = 'blue'
       }
 
-      return ret  ;
+      return ret
       // return this.effectiveColor
       //   ? this.effectiveColor
       //   : this.selected

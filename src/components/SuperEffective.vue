@@ -3,20 +3,23 @@
     <v-row class="text-center">
       <v-col class="mb-4">
         <v-card max-width="500">
-          <v-card-title>Select the Pokemon Type {{ selected }}</v-card-title>
-
+          <!-- <v-card-title>Select the Pokemon Type {{ selected }}</v-card-title> -->
+          <h2>Select the Pokemon's Type</h2>
           <v-card-text class="align-center">
             <v-row>
               <span v-for="type in types" :key="type.name">
                 <TypeIcon
                   :type="type.name"
                   :selected="isSelected(type.name)"
+                  :selectable="true"
+                  effectiveness=""
                   @typeSelected="updateSelection"
                 />
               </span>
             </v-row>
           </v-card-text>
 
+          <!-- Super effective -->
           <h2>{{ selectedTypeString() }}</h2>
           <v-card-text>
             <v-row v-if="effectiveness">
@@ -25,7 +28,9 @@
                   <TypeIcon
                     :type="format(type)"
                     :selected="false"
-                    effective-color="orange"
+                    effective-color="green darken-2"
+                    :selectable="false"
+                    effectiveness="4x"
                     @typeSelected="updateSelection"
                   />
                 </span>
@@ -39,7 +44,9 @@
                   <TypeIcon
                     :type="format(type)"
                     :selected="false"
-                    effective-color="green"
+                    :selectable="false"
+                    effective-color="light-green"
+                    effectiveness="2x"
                     @typeSelected="updateSelection"
                   />
                 </span>
@@ -56,20 +63,6 @@
                 <v-card-text>
                   <v-row v-if="effectiveness">
                     <span
-                      v-for="type in Object.keys(effectiveness.notVery)"
-                      :key="type"
-                    >
-                      <span v-if="type">
-                        <TypeIcon
-                          :type="format(type)"
-                          :selected="false"
-                          effective-color="orange"
-                          @typeSelected="updateSelection"
-                        />
-                      </span>
-                    </span>
-
-                    <span
                       v-for="type in Object.keys(effectiveness.noEffect)"
                       :key="type"
                     >
@@ -77,7 +70,24 @@
                         <TypeIcon
                           :type="format(type)"
                           :selected="false"
-                          effective-color="green"
+                          :selectable="false"
+                          effective-color="blue-grey"
+                          effectiveness="No Effect"
+                          @typeSelected="updateSelection"
+                        />
+                      </span>
+                    </span>
+                    <span
+                      v-for="type in Object.keys(effectiveness.notVery)"
+                      :key="type"
+                    >
+                      <span v-if="type">
+                        <TypeIcon
+                          :type="format(type)"
+                          :selected="false"
+                          :selectable="false"
+                          effective-color="red lighten-1"
+                          effectiveness="0.5x"
                           @typeSelected="updateSelection"
                         />
                       </span>
