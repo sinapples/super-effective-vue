@@ -1,7 +1,7 @@
 <template>
-  <div class="page-wrapper">
-    <Dashboard />
-  </div>
+  <!-- <div class="page-wrapper"> -->
+  <Dashboard />
+  <!-- </div> -->
 </template>
 
 <script>

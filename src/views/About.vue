@@ -1,25 +1,27 @@
 <template>
-  <v-card>
-    <v-card-title>Thanks for using Super Effective </v-card-title>
+  <v-row class="justify-center">
+    <v-card max-width="500px">
+      <v-card-title>Thanks for using Super Effective </v-card-title>
 
-    <v-card-text>
-      Hi, I'm Josh!
-      <p>
-        If you like this app you can support me sending me some boba
-      </p></v-card-text
-    >
-
-    <v-card-actions
-      ><v-btn
-        color="primary"
-        block
-        href="https://www.buymeacoffee.com/sinapples"
-        target="_blank"
+      <v-card-text>
+        Hi, I'm Josh!
+        <p>
+          If you like this app you can support me sending me some boba
+        </p></v-card-text
       >
-        Buy me some boba?
-      </v-btn>
-    </v-card-actions>
-  </v-card>
+
+      <v-card-actions
+        ><v-btn
+          color="primary"
+          block
+          href="https://www.buymeacoffee.com/sinapples"
+          target="_blank"
+        >
+          Buy me some boba?
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-row>
 </template>
 
 <script>

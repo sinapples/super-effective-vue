@@ -184,7 +184,7 @@ function superEffective(type1, type2) {
     sortEffectiveness(effectiveTable, type, counters[type])
   })
 
-  console.log(JSON.stringify(effectiveTable))
+  // console.log(JSON.stringify(effectiveTable))
   return effectiveTable
 }
 

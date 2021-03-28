@@ -1,127 +1,125 @@
 <template>
-  <v-container>
-    <v-row class="text-center">
-      <v-col class="mb-4">
-        <v-card max-width="500">
-          <!-- <v-card-title class="text-center heading" -->
-          <!-- >Select the Pokemon Type {{ selected }}</v-card-title -->
-          <!-- > -->
-          <h2>Select the Pokemon's Type</h2>
-          <v-card-text class="ml-7">
-            <v-row>
-              <span v-for="type in types" :key="type.name">
-                <TypeIcon
-                  :type="type.name"
-                  :selected="isSelected(type.name)"
-                  :selectable="true"
-                  effectiveness=""
-                  @typeSelected="updateSelection"
-                />
-              </span>
-            </v-row>
-          </v-card-text>
+  <v-row class="justify-center">
+    <v-card max-width="500">
+      <!-- <v-card-title class="text-center heading" -->
+      <!-- >Select the Pokemon Type {{ selected }}</v-card-title -->
+      <!-- > -->
 
-          <!-- Super effective -->
-          <h2>{{ selectedTypeString() }}</h2>
-          <v-card-text class="ml-6">
-            <v-row v-if="effectiveness">
-              <span v-for="type in Object.keys(effectiveness.max)" :key="type">
-                <span v-if="type">
-                  <TypeIcon
-                    :type="format(type)"
-                    :selected="false"
-                    effective-color="green darken-2"
-                    :selectable="false"
-                    effectiveness="4x"
-                    @typeSelected="updateSelection"
-                  />
+      <v-card-title class="justify-center">
+        <h2>Select the Pokemon's Type</h2>
+      </v-card-title>
+
+      <v-card-text>
+        <SearchPokemon :name="name" @pokemonTypes="pokemonSelection" />
+        <v-row class="justify-center">
+          <span v-for="type in types" :key="type.name">
+            <TypeIcon
+              :type="type.name"
+              :selected="isSelected(type.name)"
+              :selectable="true"
+              effectiveness=""
+              @typeSelected="updateSelection"
+            />
+          </span>
+        </v-row>
+      </v-card-text>
+
+      <!-- Super effective -->
+      <h2>{{ selectedTypeString() }}</h2>
+      <v-card-text>
+        <v-row v-if="effectiveness" class="justify-center">
+          <span v-for="type in Object.keys(effectiveness.max)" :key="type">
+            <span v-if="type">
+              <TypeIcon
+                :type="format(type)"
+                :selected="false"
+                effective-color="green darken-2"
+                :selectable="false"
+                effectiveness="4x"
+                @typeSelected="updateSelection"
+              />
+            </span>
+          </span>
+
+          <span v-for="type in Object.keys(effectiveness.super)" :key="type">
+            <span v-if="type">
+              <TypeIcon
+                :type="format(type)"
+                :selected="false"
+                :selectable="false"
+                effective-color="light-green"
+                effectiveness="2x"
+                @typeSelected="updateSelection"
+              />
+            </span>
+          </span>
+        </v-row>
+      </v-card-text>
+
+      <!-- Resistances -->
+      <v-expansion-panels accordion>
+        <v-expansion-panel>
+          <v-expansion-panel-header class="text-center">
+            <h2>See Resistances</h2>
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <v-card-text>
+              <v-row v-if="effectiveness" class="justify-center">
+                <!-- Loop No effect -->
+                <span
+                  v-for="type in Object.keys(effectiveness.noEffect)"
+                  :key="type"
+                >
+                  <span v-if="type">
+                    <TypeIcon
+                      :type="format(type)"
+                      :selected="false"
+                      :selectable="false"
+                      effective-color="blue-grey"
+                      effectiveness="No Effect"
+                      @typeSelected="updateSelection"
+                    />
+                  </span>
                 </span>
-              </span>
-
-              <span
-                v-for="type in Object.keys(effectiveness.super)"
-                :key="type"
-              >
-                <span v-if="type">
-                  <TypeIcon
-                    :type="format(type)"
-                    :selected="false"
-                    :selectable="false"
-                    effective-color="light-green"
-                    effectiveness="2x"
-                    @typeSelected="updateSelection"
-                  />
+                <!-- Loop super Not very effect -->
+                <span
+                  v-for="type in Object.keys(effectiveness.maxNotVery)"
+                  :key="type"
+                >
+                  <span v-if="type">
+                    <TypeIcon
+                      :type="format(type)"
+                      :selected="false"
+                      :selectable="false"
+                      effective-color="red"
+                      effectiveness="0.25x"
+                      @typeSelected="updateSelection"
+                    />
+                  </span>
                 </span>
-              </span>
-            </v-row>
-          </v-card-text>
-
-          <!-- Resistances -->
-          <v-expansion-panels accordion>
-            <v-expansion-panel>
-              <v-expansion-panel-header class="text-center">
-                <h2>See Resistances</h2>
-              </v-expansion-panel-header>
-              <v-expansion-panel-content>
-                <v-card-text>
-                  <v-row v-if="effectiveness">
-                    <!-- Loop No effect -->
-                    <span
-                      v-for="type in Object.keys(effectiveness.noEffect)"
-                      :key="type"
-                    >
-                      <span v-if="type">
-                        <TypeIcon
-                          :type="format(type)"
-                          :selected="false"
-                          :selectable="false"
-                          effective-color="blue-grey"
-                          effectiveness="No Effect"
-                          @typeSelected="updateSelection"
-                        />
-                      </span>
-                    </span>
-                    <!-- Loop super Not very effect -->
-                    <span
-                      v-for="type in Object.keys(effectiveness.maxNotVery)"
-                      :key="type"
-                    >
-                      <span v-if="type">
-                        <TypeIcon
-                          :type="format(type)"
-                          :selected="false"
-                          :selectable="false"
-                          effective-color="red darken-1"
-                          effectiveness="0.25x"
-                          @typeSelected="updateSelection"
-                        />
-                      </span>
-                    </span>
-                    <!-- Loop Not very effect -->
-                    <span
-                      v-for="type in Object.keys(effectiveness.notVery)"
-                      :key="type"
-                    >
-                      <span v-if="type">
-                        <TypeIcon
-                          :type="format(type)"
-                          :selected="false"
-                          :selectable="false"
-                          effective-color="orange darken-1"
-                          effectiveness="0.5x"
-                          @typeSelected="updateSelection"
-                        />
-                      </span>
-                    </span>
-                  </v-row>
-                </v-card-text>
-              </v-expansion-panel-content>
-            </v-expansion-panel>
-          </v-expansion-panels>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+                <!-- Loop Not very effect -->
+                <span
+                  v-for="type in Object.keys(effectiveness.notVery)"
+                  :key="type"
+                >
+                  <span v-if="type">
+                    <TypeIcon
+                      :type="format(type)"
+                      :selected="false"
+                      :selectable="false"
+                      effective-color="orange lighten-2"
+                      effectiveness="0.5x"
+                      @typeSelected="updateSelection"
+                    />
+                  </span>
+                </span>
+              </v-row>
+            </v-card-text>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+    </v-card>
+  </v-row>
 </template>
 
 <script lang="ts">
@@ -129,12 +127,14 @@ import Vue from 'vue'
 import util from '@/utils/effectiveness'
 import lang from '@/utils/languageUtils'
 import TypeIcon from './TypeIcon.vue'
+import SearchPokemon from './SearchPokemon.vue'
 
 export default Vue.extend({
   name: 'Dashboard',
 
   components: {
-    TypeIcon
+    TypeIcon,
+    SearchPokemon
   },
 
   data: () => ({
@@ -159,6 +159,7 @@ export default Vue.extend({
       { name: 'Steel', selected: false }
     ],
     effective: '',
+    name: '',
 
     selected: [''],
     effectiveness: {
@@ -173,9 +174,20 @@ export default Vue.extend({
   }),
 
   methods: {
+    pokemonSelection(types, name) {
+      console.log('pokemonSelection')
+      console.log(types)
+      this.selected = types
+      this.name = name
+      // selected should always have 2
+      if (this.selected.length === 1) {
+        this.selected.push('')
+      }
+      this.findEffectiveness()
+    },
     updateSelection(type) {
       // console.log(type);
-
+      this.name = ''
       const index = this.selected.indexOf(type)
 
       // Deselect type
@@ -220,8 +232,9 @@ export default Vue.extend({
 
     selectedTypeString() {
       const selectedTypes = lang.addAnd(this.selected, false)
-
-      return selectedTypes ? `${selectedTypes} is weak to` : ''
+      const typeString = selectedTypes ? `${selectedTypes} is weak to` : ''
+      const nameString = this.name ? `${this.name} is weak to` : ''
+      return nameString || typeString
     }
   }
 })

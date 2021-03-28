@@ -1,6 +1,9 @@
 <template>
   <v-container>
-    <v-row class="text-center">
+    <v-row class="text-center ">
+      <!-- <v-col class="mb-4" md="6" lg="6" xl="6" sm="12">
+        <SuperEffective />
+      </v-col> -->
       <v-col class="mb-4">
         <SuperEffective />
       </v-col>
