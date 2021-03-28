@@ -1,6 +1,7 @@
 <template>
   <v-card>
     <v-card-title>Thanks for using Super Effective </v-card-title>
+
     <v-card-text>
       Hi, I'm Josh!
       <p>
@@ -16,8 +17,8 @@
         target="_blank"
       >
         Buy me some boba?
-      </v-btn></v-card-actions
-    >
+      </v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 

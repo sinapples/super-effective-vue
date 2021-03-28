@@ -3,9 +3,11 @@
     <v-row class="text-center">
       <v-col class="mb-4">
         <v-card max-width="500">
-          <!-- <v-card-title>Select the Pokemon Type {{ selected }}</v-card-title> -->
+          <!-- <v-card-title class="text-center heading" -->
+          <!-- >Select the Pokemon Type {{ selected }}</v-card-title -->
+          <!-- > -->
           <h2>Select the Pokemon's Type</h2>
-          <v-card-text class="align-center">
+          <v-card-text class="ml-7">
             <v-row>
               <span v-for="type in types" :key="type.name">
                 <TypeIcon
@@ -21,7 +23,7 @@
 
           <!-- Super effective -->
           <h2>{{ selectedTypeString() }}</h2>
-          <v-card-text>
+          <v-card-text class="ml-6">
             <v-row v-if="effectiveness">
               <span v-for="type in Object.keys(effectiveness.max)" :key="type">
                 <span v-if="type">
@@ -54,6 +56,7 @@
             </v-row>
           </v-card-text>
 
+          <!-- Resistances -->
           <v-expansion-panels accordion>
             <v-expansion-panel>
               <v-expansion-panel-header class="text-center">
@@ -62,6 +65,7 @@
               <v-expansion-panel-content>
                 <v-card-text>
                   <v-row v-if="effectiveness">
+                    <!-- Loop No effect -->
                     <span
                       v-for="type in Object.keys(effectiveness.noEffect)"
                       :key="type"
@@ -77,6 +81,23 @@
                         />
                       </span>
                     </span>
+                    <!-- Loop super Not very effect -->
+                    <span
+                      v-for="type in Object.keys(effectiveness.maxNotVery)"
+                      :key="type"
+                    >
+                      <span v-if="type">
+                        <TypeIcon
+                          :type="format(type)"
+                          :selected="false"
+                          :selectable="false"
+                          effective-color="red darken-1"
+                          effectiveness="0.25x"
+                          @typeSelected="updateSelection"
+                        />
+                      </span>
+                    </span>
+                    <!-- Loop Not very effect -->
                     <span
                       v-for="type in Object.keys(effectiveness.notVery)"
                       :key="type"
@@ -86,7 +107,7 @@
                           :type="format(type)"
                           :selected="false"
                           :selectable="false"
-                          effective-color="red lighten-1"
+                          effective-color="orange darken-1"
                           effectiveness="0.5x"
                           @typeSelected="updateSelection"
                         />
@@ -144,6 +165,7 @@ export default Vue.extend({
       max: {},
       super: {},
       notVery: {},
+      maxNotVery: {},
       noEffect: {}
     },
     type1: true,

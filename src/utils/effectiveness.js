@@ -123,6 +123,9 @@ function sortEffectiveness(json, type, effectiveness) {
     case 0:
       json.noEffect[type] = effectiveness
       break
+    case 0.25:
+      json.maxNotVery[type] = effectiveness
+      break
     default:
       json.notVery[type] = effectiveness
   }
@@ -140,6 +143,7 @@ function superEffective(type1, type2) {
     max: {},
     super: {},
     notVery: {},
+    maxNotVery: {},
     noEffect: {}
   }
 
@@ -175,12 +179,12 @@ function superEffective(type1, type2) {
   else {
     counters = typeMap1
   }
-
   // Structure the effectiveness data
   Object.keys(counters).forEach(type => {
     sortEffectiveness(effectiveTable, type, counters[type])
   })
 
+  console.log(JSON.stringify(effectiveTable))
   return effectiveTable
 }
 

@@ -31,8 +31,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- 
-
 .page-wrapper {
   display: flex;
   flex-direction: column;
