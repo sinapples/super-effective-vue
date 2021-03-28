@@ -29,8 +29,8 @@ jobs:
         run: npm run test:e2e:headless
       - name: Build project
         run: npm run build
-      - name: Check bundle size
-        run: npm run bundlesize
+      # - name: Check bundle size
+      #   run: npm run bundlesize
       - name: Upload build
         uses: actions/upload-artifact@master
         with:

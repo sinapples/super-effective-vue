@@ -113,7 +113,6 @@
   },
   "_id": "super-effective@1.0.0",
   "bundlesize": [
- 
     {
       "path": "./dist/js/app*.js",
       "maxSize": "15 kB"
