@@ -2,6 +2,7 @@
   <span>
     <v-autocomplete
       v-model="selection"
+      spellcheck="false"
       label="Pokemon Name"
       clearable
       filled

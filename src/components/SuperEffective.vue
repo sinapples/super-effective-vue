@@ -6,8 +6,12 @@
       <!-- > -->
 
       <v-card-title class="justify-center">
-        <h2>Select the Pokemon's Type</h2>
+        Welcome to Super Effective
       </v-card-title>
+
+      <v-card-subtitle>
+        Select the Pokemon's type and find out what it's weak to
+      </v-card-subtitle>
 
       <v-card-text>
         <SearchPokemon :name="name" @pokemonTypes="pokemonSelection" />
@@ -23,7 +27,8 @@
           </span>
         </v-row>
       </v-card-text>
-
+      <v-card-actions></v-card-actions>
+      <v-divider />
       <!-- Super effective -->
       <h2>{{ selectedTypeString() }}</h2>
       <v-card-text>
@@ -55,12 +60,13 @@
           </span>
         </v-row>
       </v-card-text>
-
+      <v-card-actions></v-card-actions>
+      <v-divider></v-divider>
       <!-- Resistances -->
-      <v-expansion-panels accordion>
+      <v-expansion-panels accordion multiple>
         <v-expansion-panel>
-          <v-expansion-panel-header class="text-center">
-            <h2>See Resistances</h2>
+          <v-expansion-panel-header class="text-center ">
+            <h2>Resistances</h2>
           </v-expansion-panel-header>
           <v-expansion-panel-content>
             <v-card-text>
@@ -107,14 +113,29 @@
                       :type="format(type)"
                       :selected="false"
                       :selectable="false"
-                      effective-color="orange lighten-2"
+                      effective-color="orange lighten"
                       effectiveness="0.5x"
                       @typeSelected="updateSelection"
                     />
                   </span>
                 </span>
+                <span v-if="!selectedTypeString()">
+                  <v-card-text>
+                    Select a type of Search for a Pokemon
+                  </v-card-text>
+                </span>
               </v-row>
             </v-card-text>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+        <v-expansion-panel>
+          <v-expansion-panel-header>
+            <h3 class="text-center">
+              Try with your voice!
+            </h3>
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <VoiceInfo />
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
@@ -128,13 +149,15 @@ import util from '@/utils/effectiveness'
 import lang from '@/utils/languageUtils'
 import TypeIcon from './TypeIcon.vue'
 import SearchPokemon from './SearchPokemon.vue'
+import VoiceInfo from './VoiceInfo.vue'
 
 export default Vue.extend({
   name: 'Dashboard',
 
   components: {
     TypeIcon,
-    SearchPokemon
+    SearchPokemon,
+    VoiceInfo
   },
 
   data: () => ({
@@ -160,7 +183,7 @@ export default Vue.extend({
     ],
     effective: '',
     name: '',
-
+    showResist: false,
     selected: [''],
     effectiveness: {
       max: {},
