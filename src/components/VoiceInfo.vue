@@ -1,8 +1,8 @@
 <template>
-  <v-card class="elevation-0">
-    <v-card-title class="pl-2 headerClass">
-      Have a Amazon Echo or Google Nest Speaker?
-    </v-card-title>
+  <v-card class="elevation-0" max-width="400px">
+    <!-- <v-card-text class="pl-2 headerClass"> -->
+    <h3>Have a Amazon Echo or Google Nest Speaker?</h3>
+    <!-- </v-card-text> -->
     <v-card-text>
       <div class="body-1">
         "Alexa, Open Super Effective"
