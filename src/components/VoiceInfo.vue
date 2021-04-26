@@ -24,7 +24,7 @@
         Alexa</v-btn
       >
       <v-btn
-        href="https://assistant.google.com/services/a/uid/00000016d8836bb4?hl=en-US"
+        href="https://assistant.google.com/services/invoke/uid/00000016d8836bb4?hl=en"
         target="_blank"
         color="white"
         class="mr-2 noCap"

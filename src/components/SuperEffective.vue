@@ -121,7 +121,7 @@
                 </span>
                 <span v-if="!selectedTypeString()">
                   <v-card-text>
-                    Select a type of Search for a Pokemon
+                    Select a type or search for a Pokemon
                   </v-card-text>
                 </span>
               </v-row>

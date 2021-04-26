@@ -1,10 +1,5 @@
 <template>
-  <v-app-bar
-    app
-    color="primary"
-    class="navbar"
-    :class="{ offline: !networkOnLine }"
-  >
+  <v-app-bar app color="primary" class="navbar">
     <router-link to="/">
       <v-img
         alt="Pokeball Logo"
@@ -15,12 +10,17 @@
         width="40"
       />
       <span class="site-name title-desktop">{{ appTitle }}</span>
-      <span class="site-name title-mobile">{{ appShortTitle }}</span>
+      <span class="site-name title-mobile ">{{ appTitle }}</span>
     </router-link>
     <div class="links">
       <nav class="nav-links">
         <div class="nav-item">
-          <router-link to="/about">About</router-link>
+          <router-link to="/about">
+            <span>
+              Support
+              <v-icon class="pb-1" small color="white">mdi-heart</v-icon>
+            </span>
+          </router-link>
         </div>
       </nav>
     </div>
@@ -44,8 +44,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- 
-
 .navbar {
   a {
     display: flex;
@@ -79,7 +77,7 @@ export default {
   .site-name {
     font-size: 1.3rem;
     font-weight: 600;
-            color: white;
+    color: white;
     position: relative;
   }
 
@@ -126,7 +124,6 @@ export default {
 
         @mixin activatedLink() {
           margin-bottom: -2px;
- 
         }
 
         .router-link-active {
@@ -143,7 +140,6 @@ export default {
   }
 
   &.offline {
- 
     .links .nav-links .nav-item a,
     .site-name {
       color: white;
