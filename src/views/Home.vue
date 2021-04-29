@@ -20,7 +20,7 @@ export default {
       meta: [
         {
           name: 'description',
-          content: `${this.appTitle} home page`,
+          content: `Quickly find counters to different Pokemon and types`,
           id: 'desc'
         }
       ]

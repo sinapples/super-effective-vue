@@ -46,7 +46,7 @@ export default Vue.extend({
   },
 
   mounted() {
-    this.pokemon = pokedex.allPokemon()
+    this.pokemon = pokedex.allPokemon().sort()
   },
 
   methods: {

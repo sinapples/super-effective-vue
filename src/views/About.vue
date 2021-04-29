@@ -69,7 +69,7 @@ export default {
       meta: [
         {
           name: 'description',
-          content: `${this.appTitle} home page`,
+          content: `Support the development of this app with boba`,
           id: 'desc'
         }
       ]
