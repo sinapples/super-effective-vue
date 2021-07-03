@@ -5,8 +5,10 @@
       <!-- >Select the Pokemon Type {{ selected }}</v-card-title -->
       <!-- > -->
       <!-- <v-sheet color="primary"> -->
-      <v-card-title class="justify-center black--text">
-        Welcome to Super Effective
+      <v-card-title class="justify-center black--text mb-2">
+        <h3>
+          Welcome to Super Effective
+        </h3>
       </v-card-title>
       <!-- </v-sheet> -->
 
@@ -70,7 +72,7 @@
       <!-- Resistances -->
       <v-expansion-panels accordion multiple>
         <v-expansion-panel>
-          <v-expansion-panel-header class="text-center ">
+          <v-expansion-panel-header ripple class="text-center ">
             <h2>Resistances</h2>
           </v-expansion-panel-header>
           <v-expansion-panel-content>
@@ -134,7 +136,7 @@
           </v-expansion-panel-content>
         </v-expansion-panel>
         <v-expansion-panel>
-          <v-expansion-panel-header>
+          <v-expansion-panel-header ripple>
             <h3 class="text-center">
               Try with your voice!
             </h3>
@@ -144,7 +146,6 @@
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
-      <support />
     </v-card>
   </v-row>
 </template>
@@ -156,7 +157,6 @@ import lang from '@/utils/languageUtils'
 import TypeIcon from './TypeIcon.vue'
 import SearchPokemon from './SearchPokemon.vue'
 import VoiceInfo from './VoiceInfo.vue'
-import Support from './Support.vue'
 
 export default Vue.extend({
   name: 'Dashboard',
@@ -164,8 +164,7 @@ export default Vue.extend({
   components: {
     TypeIcon,
     SearchPokemon,
-    VoiceInfo,
-    Support
+    VoiceInfo
   },
 
   data: () => ({
