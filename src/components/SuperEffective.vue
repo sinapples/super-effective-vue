@@ -4,13 +4,18 @@
       <!-- <v-card-title class="text-center heading" -->
       <!-- >Select the Pokemon Type {{ selected }}</v-card-title -->
       <!-- > -->
-
-      <v-card-title class="justify-center">
+      <!-- <v-sheet color="primary"> -->
+      <v-card-title class="justify-center black--text">
         Welcome to Super Effective
       </v-card-title>
+      <!-- </v-sheet> -->
 
-      <v-card-subtitle>
-        Select the Pokemon's type and find out what it's weak to
+      <v-card-subtitle class="mx-2 mx-2 black--text">
+        <div class="my-0">
+          Select the Pokemon's type and
+          <br />
+          Find out what it's weak to
+        </div>
       </v-card-subtitle>
 
       <v-card-text>
@@ -139,6 +144,7 @@
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
+      <support />
     </v-card>
   </v-row>
 </template>
@@ -150,6 +156,7 @@ import lang from '@/utils/languageUtils'
 import TypeIcon from './TypeIcon.vue'
 import SearchPokemon from './SearchPokemon.vue'
 import VoiceInfo from './VoiceInfo.vue'
+import Support from './Support.vue'
 
 export default Vue.extend({
   name: 'Dashboard',
@@ -157,7 +164,8 @@ export default Vue.extend({
   components: {
     TypeIcon,
     SearchPokemon,
-    VoiceInfo
+    VoiceInfo,
+    Support
   },
 
   data: () => ({

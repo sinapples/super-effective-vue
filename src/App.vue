@@ -2,7 +2,7 @@
   <v-app>
     <div id="app">
       <nav-bar></nav-bar>
-      <div class="main-wrapper">
+      <div class="space">
         <router-view />
       </div>
 
@@ -41,6 +41,9 @@ export default {
 </script>
 
 <style lang="scss">
+.space {
+  padding-top: 80px;
+}
 body {
   margin: 0;
 

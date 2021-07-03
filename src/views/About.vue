@@ -1,66 +1,17 @@
 <template>
   <v-container>
     <v-row class="justify-center">
-      <v-card max-width="500px">
-        <v-card-title class="justify-center"
-          >Thanks for using Super Effective
-        </v-card-title>
-
-        <v-card-text class="justify-center">
-          Hi, I'm Josh!
-          <p />
-          I hope you found this app helpful!
-          <p />
-          If you like this app and want to support the devlopment<br />
-
-          <span style="font-size:20px; color:black">🧋</span>
-          You can buy me some bubble tea!
-          <span style="font-size:20px; color:black">🧋</span>
-
-          <p />
-          Donate to me directly thru Venmo, Paypal, Buy me a boba
-          <p />
-          @Sinapples on all platforms
-        </v-card-text>
-
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="blue lighten-2"
-            class="mr-2"
-            href="https://venmo.com/code?user_id=2003272562900992908"
-            target="_blank"
-            dark
-          >
-            Venmo
-          </v-btn>
-          <v-btn
-            color="blue darken-1"
-            class="mr-2"
-            href="https://www.paypal.me/sinapples?locale.x=en_US"
-            target="_blank"
-            dark
-          >
-            PayPal
-          </v-btn>
-          <v-btn
-            color="primary"
-            class="mr-2"
-            href="https://www.buymeacoffee.com/sinapples"
-            target="_blank"
-          >
-            Buy Me Boba
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+      <support />
     </v-row>
   </v-container>
 </template>
 
 <script>
+import Support from '@/components/Support.vue'
 import { mapState } from 'vuex'
 
 export default {
+  components: { Support },
   head() {
     return {
       title: {
