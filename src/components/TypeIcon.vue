@@ -1,21 +1,19 @@
 <template>
   <span>
-    <v-card :color="getColor()" :ripple="true" title @click="onClick">
-      <v-card-text class="text--center pa-0">
-        <v-img
-          alt="Pokeball Logo"
-          class="shrink icon"
-          contain
-          :src="require('@/assets/type-icons/Type_' + type + '.png')"
-          transition="scale-transition"
-          width="65"
-        />
+    <v-card :color="getColor()" :ripple="true" tile @click="onClick">
+      <v-img
+        alt="Pokeball Logo"
+        class="shrink icon"
+        contain
+        :src="require('@/assets/type-icons/Type_' + type + '.png')"
+        transition="scale-transition"
+        width="65"
+      />
 
-        <span :style="textColor()">
-          {{ type }}
-        </span>
-        <div v-if="effectiveness" :style="textColor()">{{ effectiveness }}</div>
-      </v-card-text>
+      <span :style="textColor()">
+        {{ type }}
+      </span>
+      <div v-if="effectiveness" :style="textColor()">{{ effectiveness }}</div>
     </v-card>
   </span>
 </template>
@@ -82,8 +80,4 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
-.icon {
-  padding-left: 5px;
-}
-</style>
+<style scoped></style>
