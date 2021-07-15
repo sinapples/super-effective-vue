@@ -1,44 +1,44 @@
 <template>
-  <v-app-bar app color="primary" class="navbar">
-    <router-link to="/">
-      <v-img
-        alt="Pokeball Logo"
-        class="shrink mr-2"
-        contain
-        src="@/assets/pokeball-icon.png"
-        transition="scale-transition"
-        width="40"
-      />
-      <span class="site-name title-desktop">{{ appTitle }}</span>
-      <span class="site-name title-mobile ">{{ appTitle }}</span>
-    </router-link>
-    <div class="links">
-      <nav class="nav-links">
-        <div class="nav-item">
-          <router-link to="/about">
-            <span>
-              Support
-              <v-icon class="pb-1" small color="white">mdi-heart</v-icon>
-            </span>
-          </router-link>
-        </div>
-      </nav>
-    </div>
+  <v-app-bar app color="primary">
+    <v-img
+      alt="Pokeball Logo"
+      class="shrink mr-2"
+      contain
+      src="@/assets/pokeball-icon.png"
+      transition="scale-transition"
+      width="40"
+    />
+    <span class="title white--text">{{ appTitle }}</span>
+    <v-spacer />
+
+    <span v-if="newContentAvailable">
+      <new-content-available-toastr
+        :refreshing-app="refreshingApp"
+        @refresh="serviceWorkerSkipWaiting"
+      ></new-content-available-toastr>
+    </span>
   </v-app-bar>
 </template>
 
 <script>
-import firebase from 'firebase/app'
-import { mapState } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
+import NewContentAvailableToastr from '@/components/NewContentAvailableToastr'
 
 export default {
+  components: { NewContentAvailableToastr },
   computed: {
-    ...mapState('app', ['networkOnLine', 'appTitle', 'appShortTitle'])
+    ...mapGetters('authentication', ['isUserLoggedIn']),
+    ...mapGetters('app', ['newContentAvailable']),
+    ...mapState('authentication', ['user']),
+    ...mapState('app', [
+      'networkOnLine',
+      'appTitle',
+      'appShortTitle',
+      'refreshingApp'
+    ])
   },
   methods: {
-    async logout() {
-      await firebase.auth().signOut()
-    }
+    ...mapActions('app', ['serviceWorkerSkipWaiting'])
   }
 }
 </script>

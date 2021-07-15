@@ -6,6 +6,9 @@
       label="Pokemon Name"
       clearable
       filled
+      :menu-props="{ maxHeight: 145 }"
+      :allow-overflow="false"
+      :auto-select-first="true"
       color="black"
       rounded
       :items="pokemon"

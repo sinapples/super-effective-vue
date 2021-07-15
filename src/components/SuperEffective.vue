@@ -37,37 +37,39 @@
       <v-card-actions></v-card-actions>
       <v-divider />
       <!-- Super effective -->
-      <h2>{{ selectedTypeString() }}</h2>
-      <v-card-text>
-        <v-row v-if="effectiveness" class="justify-center">
-          <span v-for="type in Object.keys(effectiveness.max)" :key="type">
-            <span v-if="type">
-              <TypeIcon
-                :type="format(type)"
-                :selected="false"
-                effective-color="green darken-2"
-                :selectable="false"
-                effectiveness="4x"
-                @typeSelected="updateSelection"
-              />
+      <v-card color="secondary" class="pt-2 pb-6">
+        <h2 class="white--text">{{ selectedTypeString() }}</h2>
+        <v-card-text>
+          <v-row v-if="effectiveness" class="justify-center">
+            <span v-for="type in Object.keys(effectiveness.max)" :key="type">
+              <span v-if="type">
+                <TypeIcon
+                  :type="format(type)"
+                  :selected="false"
+                  effective-color="green darken-2"
+                  :selectable="false"
+                  effectiveness="4x"
+                  @typeSelected="updateSelection"
+                />
+              </span>
             </span>
-          </span>
 
-          <span v-for="type in Object.keys(effectiveness.super)" :key="type">
-            <span v-if="type">
-              <TypeIcon
-                :type="format(type)"
-                :selected="false"
-                :selectable="false"
-                effective-color="light-green"
-                effectiveness="2x"
-                @typeSelected="updateSelection"
-              />
+            <span v-for="type in Object.keys(effectiveness.super)" :key="type">
+              <span v-if="type">
+                <TypeIcon
+                  :type="format(type)"
+                  :selected="false"
+                  :selectable="false"
+                  effective-color="light-green"
+                  effectiveness="2x"
+                  @typeSelected="updateSelection"
+                />
+              </span>
             </span>
-          </span>
-        </v-row>
-      </v-card-text>
-      <v-card-actions></v-card-actions>
+          </v-row>
+        </v-card-text>
+      </v-card>
+      <!-- <v-card-actions></v-card-actions> -->
       <v-divider></v-divider>
       <!-- Resistances -->
       <v-expansion-panels accordion multiple>
@@ -264,6 +266,9 @@ export default Vue.extend({
       const selectedTypes = lang.addAnd(this.selected, false)
       const typeString = selectedTypes ? `${selectedTypes} is weak to` : ''
       const nameString = this.name ? `${this.name} is weak to` : ''
+      if (!nameString && !typeString) {
+        return 'Select a Type'
+      }
       return nameString || typeString
     }
   }

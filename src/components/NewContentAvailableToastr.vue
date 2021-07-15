@@ -1,13 +1,21 @@
 <template>
-  <div class="wrapper">
-    <template v-if="refreshingApp">
-      Loading new content...
-    </template>
-    <template v-else>
-      New content available. Please
-      <span class="refresh-btn" @click="$emit('refresh')">REFRESH</span>
-    </template>
-  </div>
+  <span>
+    <span v-if="refreshingApp">
+      <v-btn class="refresh-btn" color="error" small :ripple="false">
+        Loading new content
+      </v-btn>
+    </span>
+    <span v-else>
+      <v-btn
+        class="refresh-btn"
+        color="secondary"
+        small
+        @click="$emit('refresh')"
+      >
+        Update <v-icon small class="pl-2">mdi-update</v-icon>
+      </v-btn>
+    </span>
+  </span>
 </template>
 
 <script>
