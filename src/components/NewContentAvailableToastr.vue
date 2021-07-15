@@ -1,8 +1,8 @@
 <template>
   <span>
     <span v-if="refreshingApp">
-      <v-btn class="refresh-btn" color="error" small :ripple="false">
-        Loading new content
+      <v-btn class="refresh-btn" color="secondary" small :ripple="false">
+        Loading
       </v-btn>
     </span>
     <span v-else>

@@ -1,10 +1,10 @@
 <template>
-  <v-card class="elevation-0 pt-4" color="  lighten-1">
+  <v-card class="elevation-0 pt-4" color="secondary lighten-1">
     <div class=" ">
       <!-- <v-card-text class="pl-2 headerClass"> -->
-      <h3 class=" ">Have a Amazon Echo or Google Nest Speaker?</h3>
+      <h3 class=" white--text">Have a Amazon Echo or Google Nest Speaker?</h3>
       <!-- </v-card-text> -->
-      <v-card-text class=" ">
+      <v-card-text class="white--text ">
         <div class="body-1">
           "Alexa, Open Super Effective"
         </div>

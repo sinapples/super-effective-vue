@@ -1,10 +1,6 @@
 <template>
   <v-row class="justify-center">
     <v-card max-width="500">
-      <!-- <v-card-title class="text-center heading" -->
-      <!-- >Select the Pokemon Type {{ selected }}</v-card-title -->
-      <!-- > -->
-      <!-- <v-sheet color="primary"> -->
       <v-card-title class="justify-center black--text mb-2 mx-0 px-0">
         <h3>
           Welcome to Super Effective
@@ -37,8 +33,8 @@
       <v-card-actions></v-card-actions>
       <v-divider />
       <!-- Super effective -->
-      <v-card tile color="primary darken-1 elevation-0" class="pt-2 pb-6">
-        <h2 class="white--text">{{ selectedTypeString() }}</h2>
+      <v-card tile color="elevation-0" class="pt-2 pb-6">
+        <h2 class="dark--text">{{ selectedTypeString() }}</h2>
         <v-card-text>
           <v-row v-if="effectiveness" class="justify-center">
             <span v-for="type in Object.keys(effectiveness.max)" :key="type">
@@ -76,7 +72,7 @@
         <v-expansion-panel>
           <v-expansion-panel-header
             ripple
-            color="secondary darken-1"
+            color="primary darken-1"
             class="text-center white--text"
           >
             <h2>Resistances</h2>
@@ -116,7 +112,7 @@
                         :type="format(type)"
                         :selected="false"
                         :selectable="false"
-                        effective-color="red"
+                        effective-color="pink darken-4"
                         effectiveness="0.25x"
                         @typeSelected="updateSelection"
                       />
@@ -132,7 +128,7 @@
                         :type="format(type)"
                         :selected="false"
                         :selectable="false"
-                        effective-color="orange lighten"
+                        effective-color="deep-orange  darken-3"
                         effectiveness="0.5x"
                         @typeSelected="updateSelection"
                       />
@@ -149,12 +145,17 @@
           </v-sheet>
         </v-expansion-panel>
         <v-expansion-panel>
-          <v-expansion-panel-header ripple>
-            <h2 class="text-center">
+          <v-expansion-panel-header color="secondary" ripple>
+            <h2 class="text-center white--text">
               Try with your voice!
             </h2>
+            <template v-slot:actions>
+              <v-icon color="white">
+                $expand
+              </v-icon>
+            </template>
           </v-expansion-panel-header>
-          <v-sheet color="  lighten-1">
+          <v-sheet color="secondary  lighten-1">
             <v-expansion-panel-content>
               <VoiceInfo />
             </v-expansion-panel-content>

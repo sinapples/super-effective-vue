@@ -1,7 +1,7 @@
 <template>
-  <v-card color="secondary" dark>
+  <v-card color="secondary " dark tile>
     <v-sheet color="primary darken-1">
-      <v-card-title class="justify-center text-h7  ">
+      <v-card-title class="justify-center text-h7  white--text">
         <div class="justify-center">
           <span class="justify-center line mr-2">Thank you for using </span>
           <span class="justify-center line">{{ appTitle }} </span>
