@@ -128,7 +128,7 @@
                         :type="format(type)"
                         :selected="false"
                         :selectable="false"
-                        effective-color="deep-orange  darken-3"
+                        effective-color="pink lighten-1"
                         effectiveness="0.5x"
                         @typeSelected="updateSelection"
                       />
@@ -185,24 +185,24 @@ export default Vue.extend({
 
   data: () => ({
     types: [
-      { name: 'Fire', selected: false },
-      { name: 'Water', selected: false },
-      { name: 'Bug', selected: false },
       { name: 'Dark', selected: false },
-      { name: 'Grass', selected: false },
       { name: 'Dragon', selected: false },
-      { name: 'Electric', selected: false },
+      { name: 'Bug', selected: false },
+      { name: 'Fire', selected: false },
       { name: 'Fairy', selected: false },
-      { name: 'Fighting', selected: false },
-      { name: 'Flying', selected: false },
+      { name: 'Electric', selected: false },
+      { name: 'Grass', selected: false },
       { name: 'Ghost', selected: false },
       { name: 'Ground', selected: false },
+      { name: 'Fighting', selected: false },
+      { name: 'Flying', selected: false },
       { name: 'Ice', selected: false },
       { name: 'Normal', selected: false },
       { name: 'Poison', selected: false },
       { name: 'Psychic', selected: false },
       { name: 'Rock', selected: false },
-      { name: 'Steel', selected: false }
+      { name: 'Steel', selected: false },
+      { name: 'Water', selected: false }
     ],
     effective: '',
     name: '',
