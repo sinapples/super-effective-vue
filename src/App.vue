@@ -23,7 +23,7 @@
         {{ text }}
 
         <template v-slot:action="{ attrs }">
-          <v-btn color="primary" text v-bind="attrs" @click="snackbar = true">
+          <v-btn color="primary" text v-bind="attrs" @click="snackbar = false">
             Close
           </v-btn>
         </template>

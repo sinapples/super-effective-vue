@@ -9,7 +9,7 @@
       </v-card-title>
     </v-sheet>
 
-    <v-card-text class=" body-1 text-center px-0 ">
+    <v-card-text class=" body-1 text-center px-0 mb-0">
       <v-container class="px-0">
         <v-row align="center" justify="center" no-gutters>
           <v-spacer />
@@ -40,24 +40,22 @@
           <v-spacer />
         </v-row>
       </v-container>
-      <div class="white--text">
+      <div class="white--text mb-0">
         <div>Support the development of {{ appTitle }} by</div>
         <div class="font-weight-bold primary--text pt-4">
-          <span style="font-size:20px; color:black">🧋</span>
+          <v-icon class="mr-2">mdi-tea</v-icon>
           Buying me Bubble Tea!
-          <span style="font-size:20px; color:black">🧋</span>
+          <v-icon class="ml-2">mdi-tea</v-icon>
         </div>
-        <div>
+        <div class="mb-0">
+          <strong> @sinapples </strong>on all platforms
           <p />
-          <strong> Donate</strong> to me directly though <br />
-          Venmo, Paypal, or Buy Me Boba
-          <p />
+          <strong> Donate</strong> to me directly though
         </div>
-        <strong> @sinapples </strong>on all platforms
       </div>
     </v-card-text>
 
-    <v-card-actions class="pb-8 pl-1">
+    <v-card-actions class="pb-12 pl-1 mt-0 pt-0">
       <v-spacer />
       <v-btn
         color="blue lighten-2"

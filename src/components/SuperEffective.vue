@@ -200,8 +200,8 @@ export default Vue.extend({
       { name: 'Normal', selected: false },
       { name: 'Poison', selected: false },
       { name: 'Psychic', selected: false },
-      { name: 'Rock', selected: false },
       { name: 'Steel', selected: false },
+      { name: 'Rock', selected: false },
       { name: 'Water', selected: false }
     ],
     effective: '',
