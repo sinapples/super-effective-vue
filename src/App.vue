@@ -18,6 +18,16 @@
         @close="closeAddToHomeScreenModalForApple(false)"
       >
       </apple-add-to-home-screen-modal>
+
+      <v-snackbar v-model="snackbar" :multi-line="multiLine">
+        {{ text }}
+
+        <template v-slot:action="{ attrs }">
+          <v-btn color="primary" text v-bind="attrs" @click="snackbar = true">
+            Close
+          </v-btn>
+        </template>
+      </v-snackbar>
     </div>
   </v-app>
 </template>
@@ -29,6 +39,12 @@ import { mapState, mapActions, mapGetters } from 'vuex'
 
 export default {
   components: { NavBar, NewContentAvailableToastr, AppleAddToHomeScreenModal },
+
+  data: () => ({
+    snackbar: true,
+    text:
+      'By using Super Effective you consent to the use of third-party cookies'
+  }),
   computed: {
     ...mapGetters('app', ['newContentAvailable']),
     ...mapState('app', ['showAddToHomeScreenModalForApple', 'refreshingApp'])
