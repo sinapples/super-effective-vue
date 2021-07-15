@@ -72,7 +72,7 @@
         <v-expansion-panel>
           <v-expansion-panel-header
             ripple
-            color="primary darken-1"
+            color="primary  "
             class="text-center white--text"
           >
             <h2>Resistances</h2>

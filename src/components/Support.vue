@@ -1,6 +1,6 @@
 <template>
   <v-card color="secondary " dark tile>
-    <v-sheet color="primary darken-1">
+    <v-sheet color="primary  ">
       <v-card-title class="justify-center text-h7  white--text">
         <div class="justify-center">
           <span class="justify-center line mr-2">Thank you for using </span>
