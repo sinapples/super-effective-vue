@@ -42,7 +42,7 @@ export default {
 
 <style lang="scss">
 .space {
-  padding-top: 80px;
+  padding-top: 55px;
 }
 body {
   margin: 0;

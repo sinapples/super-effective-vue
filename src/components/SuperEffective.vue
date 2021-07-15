@@ -5,7 +5,7 @@
       <!-- >Select the Pokemon Type {{ selected }}</v-card-title -->
       <!-- > -->
       <!-- <v-sheet color="primary"> -->
-      <v-card-title class="justify-center black--text mb-2">
+      <v-card-title class="justify-center black--text mb-2 mx-0 px-0">
         <h3>
           Welcome to Super Effective
         </h3>
@@ -77,65 +77,67 @@
           <v-expansion-panel-header ripple class="text-center ">
             <h2>Resistances</h2>
           </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            <v-card-text>
-              <v-row v-if="effectiveness" class="justify-center">
-                <!-- Loop No effect -->
-                <span
-                  v-for="type in Object.keys(effectiveness.noEffect)"
-                  :key="type"
-                >
-                  <span v-if="type">
-                    <TypeIcon
-                      :type="format(type)"
-                      :selected="false"
-                      :selectable="false"
-                      effective-color="blue-grey"
-                      effectiveness="No Effect"
-                      @typeSelected="updateSelection"
-                    />
+          <v-sheet color="secondary lighten-1">
+            <v-expansion-panel-content>
+              <v-card-text class="mt-4 px-0 mx-0">
+                <v-row v-if="effectiveness" class="justify-center">
+                  <!-- Loop No effect -->
+                  <span
+                    v-for="type in Object.keys(effectiveness.noEffect)"
+                    :key="type"
+                  >
+                    <span v-if="type">
+                      <TypeIcon
+                        :type="format(type)"
+                        :selected="false"
+                        :selectable="false"
+                        effective-color="blue-grey lighten-1"
+                        effectiveness="No Effect"
+                        @typeSelected="updateSelection"
+                      />
+                    </span>
                   </span>
-                </span>
-                <!-- Loop super Not very effect -->
-                <span
-                  v-for="type in Object.keys(effectiveness.maxNotVery)"
-                  :key="type"
-                >
-                  <span v-if="type">
-                    <TypeIcon
-                      :type="format(type)"
-                      :selected="false"
-                      :selectable="false"
-                      effective-color="red"
-                      effectiveness="0.25x"
-                      @typeSelected="updateSelection"
-                    />
+                  <!-- Loop super Not very effect -->
+                  <span
+                    v-for="type in Object.keys(effectiveness.maxNotVery)"
+                    :key="type"
+                  >
+                    <span v-if="type">
+                      <TypeIcon
+                        :type="format(type)"
+                        :selected="false"
+                        :selectable="false"
+                        effective-color="red"
+                        effectiveness="0.25x"
+                        @typeSelected="updateSelection"
+                      />
+                    </span>
                   </span>
-                </span>
-                <!-- Loop Not very effect -->
-                <span
-                  v-for="type in Object.keys(effectiveness.notVery)"
-                  :key="type"
-                >
-                  <span v-if="type">
-                    <TypeIcon
-                      :type="format(type)"
-                      :selected="false"
-                      :selectable="false"
-                      effective-color="orange lighten"
-                      effectiveness="0.5x"
-                      @typeSelected="updateSelection"
-                    />
+                  <!-- Loop Not very effect -->
+                  <span
+                    v-for="type in Object.keys(effectiveness.notVery)"
+                    :key="type"
+                  >
+                    <span v-if="type">
+                      <TypeIcon
+                        :type="format(type)"
+                        :selected="false"
+                        :selectable="false"
+                        effective-color="orange lighten"
+                        effectiveness="0.5x"
+                        @typeSelected="updateSelection"
+                      />
+                    </span>
                   </span>
-                </span>
-                <span v-if="!selectedTypeString()">
-                  <v-card-text>
-                    Select a type or search for a Pokemon
-                  </v-card-text>
-                </span>
-              </v-row>
-            </v-card-text>
-          </v-expansion-panel-content>
+                  <span v-if="selectedTypeString() === 'Select a Type'">
+                    <v-card-text class="white--text text-h6">
+                      Select a type or search for a Pokemon
+                    </v-card-text>
+                  </span>
+                </v-row>
+              </v-card-text>
+            </v-expansion-panel-content>
+          </v-sheet>
         </v-expansion-panel>
         <v-expansion-panel>
           <v-expansion-panel-header ripple>
@@ -143,9 +145,11 @@
               Try with your voice!
             </h3>
           </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            <VoiceInfo />
-          </v-expansion-panel-content>
+          <v-sheet color="secondary lighten-1">
+            <v-expansion-panel-content>
+              <VoiceInfo />
+            </v-expansion-panel-content>
+          </v-sheet>
         </v-expansion-panel>
       </v-expansion-panels>
     </v-card>
