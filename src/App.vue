@@ -19,7 +19,7 @@
       >
       </apple-add-to-home-screen-modal>
 
-      <v-snackbar v-model="snackbar" :multi-line="multiLine">
+      <v-snackbar v-model="snackbar">
         {{ text }}
 
         <template v-slot:action="{ attrs }">

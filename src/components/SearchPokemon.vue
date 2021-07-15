@@ -3,15 +3,18 @@
     <v-autocomplete
       v-model="selection"
       spellcheck="false"
+      name="pokemon"
       label="Pokemon Name"
       clearable
       filled
+      :filter="filter"
       :menu-props="{ maxHeight: 145 }"
       :allow-overflow="false"
       :auto-select-first="true"
       color="black"
       rounded
       :items="pokemon"
+      append-icon="mdi-pokeball"
       @click:clear="clear()"
     ></v-autocomplete>
   </span>
@@ -32,7 +35,17 @@ export default Vue.extend({
   data: () => ({
     img: '@/assets/type-icons/Type_Fire.png',
     pokemon: [],
-    selection: ''
+    selection: '',
+    filter: (item, queryText, itemText) => {
+      if (itemText) {
+        return (
+          itemText
+            .toLocaleLowerCase()
+            .indexOf(queryText.toLocaleLowerCase()) === 0
+        )
+      }
+      return true
+    }
   }),
 
   watch: {
