@@ -1,12 +1,10 @@
 <template>
   <v-card color="secondary" dark>
     <v-sheet color="primary darken-1">
-      <v-card-title class="justify-center">
-        <div>Thank you for using {{ appTitle }}</div>
-        <div>
-          <!-- <v-icon class="mr-2" color="white">mdi-party-popper</v-icon> -->
-
-          <!-- <v-icon class="ml-2" color="white">mdi-party-popper</v-icon> -->
+      <v-card-title class="justify-center text-h7  ">
+        <div class="justify-center">
+          <span class="justify-center line mr-2">Thank you for using </span>
+          <span class="justify-center line">{{ appTitle }} </span>
         </div>
       </v-card-title>
     </v-sheet>
@@ -98,4 +96,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+span.line {
+  display: inline-block;
+}
+</style>

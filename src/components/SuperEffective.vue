@@ -37,7 +37,7 @@
       <v-card-actions></v-card-actions>
       <v-divider />
       <!-- Super effective -->
-      <v-card color="secondary" class="pt-2 pb-6">
+      <v-card tile color="primary darken-1 elevation-0" class="pt-2 pb-6">
         <h2 class="white--text">{{ selectedTypeString() }}</h2>
         <v-card-text>
           <v-row v-if="effectiveness" class="justify-center">
@@ -72,10 +72,19 @@
       <!-- <v-card-actions></v-card-actions> -->
       <v-divider></v-divider>
       <!-- Resistances -->
-      <v-expansion-panels accordion multiple>
+      <v-expansion-panels tile accordion multiple flat>
         <v-expansion-panel>
-          <v-expansion-panel-header ripple class="text-center ">
+          <v-expansion-panel-header
+            ripple
+            color="secondary darken-1"
+            class="text-center white--text"
+          >
             <h2>Resistances</h2>
+            <template v-slot:actions>
+              <v-icon color="white">
+                $expand
+              </v-icon>
+            </template>
           </v-expansion-panel-header>
           <v-sheet color="secondary lighten-1">
             <v-expansion-panel-content>
@@ -141,11 +150,11 @@
         </v-expansion-panel>
         <v-expansion-panel>
           <v-expansion-panel-header ripple>
-            <h3 class="text-center">
+            <h2 class="text-center">
               Try with your voice!
-            </h3>
+            </h2>
           </v-expansion-panel-header>
-          <v-sheet color="secondary lighten-1">
+          <v-sheet color="  lighten-1">
             <v-expansion-panel-content>
               <VoiceInfo />
             </v-expansion-panel-content>
