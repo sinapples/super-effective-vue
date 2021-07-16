@@ -1,6 +1,7 @@
 <template>
   <span>
     <v-autocomplete
+      ref="combo"
       v-model="selection"
       spellcheck="false"
       name="pokemon"
@@ -8,13 +9,17 @@
       clearable
       filled
       :filter="filter"
-      :menu-props="{ maxHeight: 145 }"
+      :menu-props="{
+        maxHeight: 145
+      }"
       :allow-overflow="false"
       :auto-select-first="true"
       color="black"
       rounded
       :items="pokemon"
       append-icon="mdi-pokeball"
+      @keyup.enter="blur()"
+      @change="blur()"
       @click:clear="clear()"
     ></v-autocomplete>
   </span>
@@ -66,6 +71,9 @@ export default Vue.extend({
   },
 
   methods: {
+    blur() {
+      this.$refs.combo.blur()
+    },
     clear() {
       this.$emit('pokemonTypes', ['', ''], '')
     },

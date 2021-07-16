@@ -43,7 +43,7 @@ export default {
   data: () => ({
     snackbar: true,
     text:
-      'By using Super Effective you consent to the use of third-party cookies'
+      'By using Super Effective you consent to the use of third-party cookies for analytics'
   }),
   computed: {
     ...mapGetters('app', ['newContentAvailable']),
