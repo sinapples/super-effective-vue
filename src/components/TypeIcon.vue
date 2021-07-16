@@ -7,7 +7,7 @@
         contain
         :src="require('@/assets/type-icons/Type_' + type + '.png')"
         transition="scale-transition"
-        width="65"
+        width="75"
       />
 
       <span :style="textColor()">

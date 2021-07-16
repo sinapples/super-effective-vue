@@ -32,7 +32,6 @@
         >
           <!-- <v-icon class="mr-2">mdi-google-assistant</v-icon> -->
           <v-img
-            contain="true"
             class="mr-2"
             max-height="24px"
             max-width="24px"

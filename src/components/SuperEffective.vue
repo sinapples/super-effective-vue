@@ -44,7 +44,7 @@
                   :selected="false"
                   effective-color="green darken-2"
                   :selectable="false"
-                  effectiveness="4x"
+                  effectiveness="Best"
                   @typeSelected="updateSelection"
                 />
               </span>
@@ -57,7 +57,7 @@
                   :selected="false"
                   :selectable="false"
                   effective-color="light-green"
-                  effectiveness="2x"
+                  effectiveness="Great"
                   @typeSelected="updateSelection"
                 />
               </span>
@@ -97,7 +97,7 @@
                         :selected="false"
                         :selectable="false"
                         effective-color="blue-grey lighten-1"
-                        effectiveness="No Effect"
+                        effectiveness="Worst"
                         @typeSelected="updateSelection"
                       />
                     </span>
@@ -113,7 +113,7 @@
                         :selected="false"
                         :selectable="false"
                         effective-color="pink darken-4"
-                        effectiveness="0.25x"
+                        effectiveness="Terrible"
                         @typeSelected="updateSelection"
                       />
                     </span>
@@ -129,7 +129,7 @@
                         :selected="false"
                         :selectable="false"
                         effective-color="pink lighten-1"
-                        effectiveness="0.5x"
+                        effectiveness="Bad"
                         @typeSelected="updateSelection"
                       />
                     </span>
@@ -138,6 +138,19 @@
                     <v-card-text class="white--text text-h6">
                       Select a type or search for a Pokemon
                     </v-card-text>
+                  </span>
+                  <span class="white--text text-body pt-6">
+                    <div class="pb-2">
+                      Effectiveness multiplier for main
+                      <span class=" line"> Pokemon games/Pokemon Go </span>
+                    </div>
+                    <div class="pb-1 line">
+                      • Best (4x/2.56x) • Great (2x/1.6×)
+                    </div>
+                    <div class="pb-1 line">
+                      • Bad (.5x/0.625x) • Terrible (.25x/0.391x)
+                      <div class="pb-1 line">• Worst (No Effect/0.244x)</div>
+                    </div>
                   </span>
                 </v-row>
               </v-card-text>
@@ -221,8 +234,6 @@ export default Vue.extend({
 
   methods: {
     pokemonSelection(types, name) {
-      console.log('pokemonSelection')
-      console.log(types)
       this.selected = types
       this.name = name
       // selected should always have 2
@@ -288,3 +299,9 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style scoped>
+span.line {
+  display: inline-block;
+}
+</style>

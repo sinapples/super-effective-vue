@@ -60,7 +60,6 @@ export default Vue.extend({
     selection(selection) {
       if (selection) {
         const types = pokedex.getTypes(selection)
-        console.log(types)
         this.$emit('pokemonTypes', types, selection)
       }
     }
