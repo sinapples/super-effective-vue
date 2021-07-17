@@ -1,6 +1,12 @@
 <template>
   <span>
-    <v-card :color="getColor()" :ripple="true" tile @click="onClick">
+    <v-card
+      :color="getColor()"
+      :ripple="true"
+      tile
+      class="pb-1"
+      @click="onClick"
+    >
       <v-img
         alt="Pokeball Logo"
         class="shrink icon"
@@ -8,6 +14,7 @@
         :src="require('@/assets/type-icons/Type_' + type + '.png')"
         transition="scale-transition"
         width="75"
+        height="85"
       />
 
       <span :style="textColor()">

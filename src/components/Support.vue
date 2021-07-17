@@ -17,7 +17,7 @@
           <v-col cols="auto">
             <v-list-item-avatar class="ma-3" size="125" right rounded>
               <v-img
-                src="https://firebasestorage.googleapis.com/v0/b/pockets-check.appspot.com/o/1C377174-3F9A-4F03-B42A-C1E68C5855C5.JPG?alt=media&token=f086d377-a289-4db9-a6f1-5436d4df55fc"
+                src="https://firebasestorage.googleapis.com/v0/b/super-effective-eea44.appspot.com/o/photo-squashed.JPG?alt=media&token=b55d8a0c-bacf-40df-901c-c084a183ced0"
               ></v-img>
             </v-list-item-avatar>
           </v-col>

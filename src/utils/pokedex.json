@@ -959,6 +959,7 @@
   "Zamazenta": { "number": 889, "types": ["Fighting", "Steel"] },
   "Eternatus": { "number": 890, "types": ["Poison", "Dragon"] },
   "Josh": { "number": "#1000", "types": ["Water", "Ice"] },
+  "Trang": { "number": "#1001", "types": ["Fairy", "Fire"] },
   "Alolan Rattata": { "number": "A1", "types": ["Dark", "Normal"] },
   "Alolan Raticate": { "number": "A2", "types": ["Dark", "Normal"] },
   "Alolan Raichu": { "number": "A3", "types": ["Electric", "Psychic"] },

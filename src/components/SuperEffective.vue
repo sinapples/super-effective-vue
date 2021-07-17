@@ -42,7 +42,7 @@
                 <TypeIcon
                   :type="format(type)"
                   :selected="false"
-                  effective-color="green darken-2"
+                  effective-color="#058c42"
                   :selectable="false"
                   effectiveness="Best"
                   @typeSelected="updateSelection"
@@ -56,7 +56,7 @@
                   :type="format(type)"
                   :selected="false"
                   :selectable="false"
-                  effective-color="light-green"
+                  effective-color="#8bb174"
                   effectiveness="Great"
                   @typeSelected="updateSelection"
                 />
@@ -96,7 +96,7 @@
                         :type="format(type)"
                         :selected="false"
                         :selectable="false"
-                        effective-color="blue-grey lighten-1"
+                        effective-color="#8c7a6b"
                         effectiveness="Worst"
                         @typeSelected="updateSelection"
                       />
@@ -112,7 +112,7 @@
                         :type="format(type)"
                         :selected="false"
                         :selectable="false"
-                        effective-color="pink darken-4"
+                        effective-color="#5e0b15"
                         effectiveness="Terrible"
                         @typeSelected="updateSelection"
                       />
@@ -128,7 +128,7 @@
                         :type="format(type)"
                         :selected="false"
                         :selectable="false"
-                        effective-color="pink lighten-1"
+                        effective-color="#90323d"
                         effectiveness="Bad"
                         @typeSelected="updateSelection"
                       />
@@ -198,24 +198,24 @@ export default Vue.extend({
 
   data: () => ({
     types: [
-      { name: 'Dark', selected: false },
-      { name: 'Dragon', selected: false },
-      { name: 'Bug', selected: false },
+      { name: 'Normal', selected: false },
       { name: 'Fire', selected: false },
-      { name: 'Fairy', selected: false },
+      { name: 'Water', selected: false },
       { name: 'Electric', selected: false },
       { name: 'Grass', selected: false },
-      { name: 'Ghost', selected: false },
-      { name: 'Ground', selected: false },
-      { name: 'Fighting', selected: false },
-      { name: 'Flying', selected: false },
       { name: 'Ice', selected: false },
-      { name: 'Normal', selected: false },
+      { name: 'Fighting', selected: false },
       { name: 'Poison', selected: false },
+      { name: 'Ground', selected: false },
+      { name: 'Flying', selected: false },
       { name: 'Psychic', selected: false },
-      { name: 'Steel', selected: false },
+      { name: 'Bug', selected: false },
       { name: 'Rock', selected: false },
-      { name: 'Water', selected: false }
+      { name: 'Ghost', selected: false },
+      { name: 'Dragon', selected: false },
+      { name: 'Dark', selected: false },
+      { name: 'Steel', selected: false },
+      { name: 'Fairy', selected: false }
     ],
     effective: '',
     name: '',
