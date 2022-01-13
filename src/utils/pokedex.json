@@ -997,6 +997,7 @@
   "Galarian Slowpoke": { "number": "G16", "types": ["Psychic"] },
   "Galarian Slowbro": { "number": "G17", "types": ["Psychic", "Posion"] },
   "Galarian Slowking": { "number": "G17", "types": ["Psychic", "Posion"] },
+  "Boba Boy Nam": { "number": "D17", "types": ["Ghost", "Posion"] },
   "Kubfu": { "number": 891, "types": ["Fighting"] },
   "Rapid Strike Style Urshifu": {
     "number": 892,
