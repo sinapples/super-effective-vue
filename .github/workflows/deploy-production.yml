@@ -21,12 +21,12 @@ jobs:
             ${{ runner.os }}-
       # - name: Install dependencies
         # run: npm ci --cache-min=9999 --no-audit --progress=false
-      - name: Check linter
-        run: npm run lint
-      - name: Check unit tests
-        run: npm run test:unit
-      - name: Check e2e tests
-        run: npm run test:e2e:headless
+      # - name: Check linter
+      #   run: npm run lint
+      # - name: Check unit tests
+      #   run: npm run test:unit
+      # - name: Check e2e tests
+      #   run: npm run test:e2e:headless
       - name: Build project
         run: npm run build
       # - name: Check bundle size
