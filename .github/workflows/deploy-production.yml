@@ -19,7 +19,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-modules-
             ${{ runner.os }}-
-      # - name: Install dependencies
+      - name: Install dependencies
+        run: npm install
         # run: npm ci --cache-min=9999 --no-audit --progress=false
       # - name: Check linter
       #   run: npm run lint
