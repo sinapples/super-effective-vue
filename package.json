@@ -7,7 +7,6 @@
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
-    "bundlesize": "bundlesize",
     "firebase:deploy:ci": "firebase deploy --non-interactive --token $FIREBASE_TOKEN",
     "prettier:check": "prettier \"**/*.{vue,scss,sass,js,json}\" --list-different",
     "prettier:format-all": "prettier --write \"**/*.{vue,scss,sass,js,json}\"",
@@ -44,7 +43,7 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^24.9.0",
     "babel-plugin-lodash": "^3.3.4",
-    "bundlesize": "github:kefranabg/bundlesize",
+
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -112,12 +111,7 @@
     ]
   },
   "_id": "super-effective@1.0.0",
-  "bundlesize": [
-    {
-      "path": "./dist/js/app*.js",
-      "maxSize": "15 kB"
-    }
-  ],
+
   "engines": {
     "npm": ">=5.5.0",
     "node": ">=9.3.0"
