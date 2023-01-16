@@ -1,0 +1,34 @@
+
+
+3	724	Hisuian Decidueye ImageHisuian Decidueye	
+Pokemon Legends: Arceus - Grass Type Icon Pokemon Legends: Arceus - Fighting Type Icon
+6	157	Hisuian Typhlosion ImageHisuian Typhlosion	
+Pokemon Legends: Arceus - Fire Type Icon Pokemon Legends: Arceus - Ghost Type Icon
+9	503	Hisuian Samurott ImageHisuian Samurott	
+Pokemon Legends: Arceus - Water Type Icon Pokemon Legends: Arceus - Dark Type Icon
+84	211	Hisuian Qwilfish ImageHisuian Qwilfish	
+Pokemon Legends: Arceus - Dark Type Icon Pokemon Legends: Arceus - Poison Type Icon
+94	549	Hisuian Lilligant ImageHisuian Lilligant	
+Pokemon Legends: Arceus - Grass Type Icon Pokemon Legends: Arceus - Fighting Type Icon
+116	705	Hisuian Sliggoo ImageHisuian Sliggoo	
+Pokemon Legends: Arceus - Dragon Type Icon Pokemon Legends: Arceus - Steel Type Icon
+117	706	Hisuian Goodra ImageHisuian Goodra	
+Pokemon Legends: Arceus - Dragon Type Icon Pokemon Legends: Arceus - Steel Type Icon
+150	58	Hisuian Growlithe ImageHisuian Growlithe	
+Pokemon Legends: Arceus - Fire Type Icon Pokemon Legends: Arceus - Rock Type Icon
+151	59	Hisuian Arcanine ImageHisuian Arcanine	
+Pokemon Legends: Arceus - Fire Type Icon Pokemon Legends: Arceus - Rock Type Icon
+192	100	Hisuian Voltorb ImageHisuian Voltorb	
+Pokemon Legends: Arceus - Electric Type Icon Pokemon Legends: Arceus - Grass Type Icon
+193	101	Hisuian Electrode ImageHisuian Electrode	
+Pokemon Legends: Arceus - Electric Type Icon Pokemon Legends: Arceus - Grass Type Icon
+202.1	215	Hisuian Sneasel ImageHisuian Sneasel	
+Pokemon Legends: Arceus - Poison Type Icon Pokemon Legends: Arceus - Fighting Type Icon
+216	713	Hisuian Avalugg ImageHisuian Avalugg	
+Pokemon Legends: Arceus - Ice Type Icon Pokemon Legends: Arceus - Rock Type Icon
+219	570	Hisuian Zorua ImageHisuian Zorua	
+Pokemon Legends: Arceus - Normal Type Icon Pokemon Legends: Arceus - Ghost Type Icon
+220	571	Hisuian Zoroark ImageHisuian Zoroark	
+Pokemon Legends: Arceus - Normal Type Icon Pokemon Legends: Arceus - Ghost Type Icon
+222	628	Hisuian Braviary ImageHisuian Braviary	
+Pokemon Legends: Arceus - Psychic Type Icon Pokemon Legends: Arceus - Flying Type Icon
