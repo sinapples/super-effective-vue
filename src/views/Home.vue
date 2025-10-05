@@ -15,13 +15,31 @@ export default {
   head() {
     return {
       title: {
-        inner: 'Home'
+        inner: 'Pokemon Type Weakness Calculator',
+        separator: '-',
+        complement: 'Super Effective'
       },
       meta: [
         {
           name: 'description',
-          content: `Quickly find counters to different Pokemon and types`,
+          content:
+            'Instantly find what types are super effective against any Pokemon. Search 1000+ Pokemon or select type combinations to discover weaknesses, resistances, and immunities.',
           id: 'desc'
+        },
+        {
+          property: 'og:title',
+          content: 'Super Effective - Pokemon Type Weakness Calculator'
+        },
+        {
+          property: 'og:description',
+          content:
+            'Find Pokemon type weaknesses and resistances instantly. Search by Pokemon name or select types.'
+        }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://super-effective.app/'
         }
       ]
     }

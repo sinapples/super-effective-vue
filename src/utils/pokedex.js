@@ -75,13 +75,4 @@ module.exports = {
   getEffectiveness,
   getTypes,
   allPokemon
-  //   getRegionalForm
 }
-
-// console.log();
-// console.log("type table working: " + typeTable.working);
-// superEffective("bug", "steel");
-// superEffective("ghost", "steel");
-// superEffective("ground","flying");
-// superEffective("normal", "fighting");
-// console.log();

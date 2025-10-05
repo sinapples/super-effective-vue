@@ -3,25 +3,50 @@
     <v-row class="justify-center">
       <support />
     </v-row>
+
+    <v-row class="justify-center mt-4">
+      <v-col cols="12" sm="10" md="8" lg="6">
+        <version-history />
+      </v-col>
+    </v-row>
+
+    <v-row class="justify-center mt-6">
+      <v-col cols="12" class="text-center">
+        <v-btn text small color="grey" to="/privacy">
+          <v-icon small class="mr-1">mdi-shield-lock</v-icon>
+          Privacy Policy
+        </v-btn>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
 import Support from '@/components/Support.vue'
+import VersionHistory from '@/components/VersionHistory.vue'
 import { mapState } from 'vuex'
 
 export default {
-  components: { Support },
+  components: { Support, VersionHistory },
   head() {
     return {
       title: {
-        inner: 'Home'
+        inner: 'Support & About',
+        separator: '-',
+        complement: 'Super Effective'
       },
       meta: [
         {
           name: 'description',
-          content: `Support the development of this app with boba`,
+          content:
+            'Support Super Effective development. Available on Alexa and Google Assistant for hands-free Pokemon type checking. Donate via Venmo, PayPal, or Buy Me a Coffee.',
           id: 'desc'
+        }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://super-effective.app/about'
         }
       ]
     }

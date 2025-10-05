@@ -160,7 +160,7 @@
         <v-expansion-panel>
           <v-expansion-panel-header color="secondary" ripple>
             <h2 class="text-center white--text">
-              Try with your voice!
+              Add to Your Phone
             </h2>
             <template v-slot:actions>
               <v-icon color="white">
@@ -170,7 +170,7 @@
           </v-expansion-panel-header>
           <v-sheet color="secondary  lighten-1">
             <v-expansion-panel-content>
-              <VoiceInfo />
+              <AddToPhoneInfo />
             </v-expansion-panel-content>
           </v-sheet>
         </v-expansion-panel>
@@ -183,9 +183,10 @@
 import Vue from 'vue'
 import util from '@/utils/effectiveness'
 import lang from '@/utils/languageUtils'
+import { trackTypeSelection } from '@/utils/analytics'
 import TypeIcon from './TypeIcon.vue'
 import SearchPokemon from './SearchPokemon.vue'
-import VoiceInfo from './VoiceInfo.vue'
+import AddToPhoneInfo from './AddToPhoneInfo.vue'
 
 export default Vue.extend({
   name: 'Dashboard',
@@ -193,7 +194,7 @@ export default Vue.extend({
   components: {
     TypeIcon,
     SearchPokemon,
-    VoiceInfo
+    AddToPhoneInfo
   },
 
   data: () => ({
@@ -269,6 +270,9 @@ export default Vue.extend({
       }
 
       this.findEffectiveness()
+
+      // Track type selection in Google Analytics
+      trackTypeSelection(type, this.selected)
 
       this.$emit('SelectedTypes', this.selected)
     },

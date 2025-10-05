@@ -110,7 +110,6 @@ const types = [
 ]
 
 function sortEffectiveness(json, type, effectiveness) {
-  // console.log("sorting " + type + " " + effectiveness )
   switch (effectiveness) {
     case 4:
       json.max[type] = effectiveness
@@ -136,8 +135,6 @@ function superEffective(type1, type2) {
 
   // If both parameters are the same remove type2
   type2 = type2.toLowerCase() === type1 ? '' : type2.toLowerCase()
-
-  // console.log(`${type1} ${type2}`)
 
   const effectiveTable = {
     max: {},
@@ -184,18 +181,9 @@ function superEffective(type1, type2) {
     sortEffectiveness(effectiveTable, type, counters[type])
   })
 
-  // console.log(JSON.stringify(effectiveTable))
   return effectiveTable
 }
 
 module.exports = {
   getEffectiveness: superEffective
 }
-
-// console.log();
-// console.log("type table working: " + typeTable.working);
-// superEffective("bug", "steel");
-// superEffective("ghost", "steel");
-// superEffective("ground","flying");
-// superEffective("normal", "fighting");
-// console.log();

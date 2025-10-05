@@ -28,6 +28,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import pokedex from '@/utils/pokedex'
+import { trackPokemonSearch } from '@/utils/analytics'
 
 export default Vue.extend({
   name: 'SearchPokemon',
@@ -61,6 +62,9 @@ export default Vue.extend({
       if (selection) {
         const types = pokedex.getTypes(selection)
         this.$emit('pokemonTypes', types, selection)
+
+        // Track Pokemon search in Google Analytics
+        trackPokemonSearch(selection, types)
       }
     }
   },
@@ -75,20 +79,6 @@ export default Vue.extend({
     },
     clear() {
       this.$emit('pokemonTypes', ['', ''], '')
-    },
-    onClick() {
-      if (this.selectable) {
-        this.$emit('typeSelected', this.type)
-      }
-    },
-    getColor() {
-      return pokedex.getTypes('Pikachu')
-
-      // return this.effectiveColor
-      //   ? this.effectiveColor
-      //   : this.selected
-      //   ? 'blue'
-      //   : ''
     }
   }
 })

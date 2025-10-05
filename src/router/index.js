@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Head from 'vue-head'
 import Home from '@/views/Home'
-import About from '@/views/About'
+import Privacy from '@/views/Privacy'
+import { trackPageView } from '@/utils/analytics'
 
 // import { isNil } from 'lodash'
 // import store from '@/store'
@@ -22,11 +23,10 @@ const router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/about',
-      name: 'about',
-      component: About
+      path: '/privacy',
+      name: 'privacy',
+      component: Privacy
     },
-
     {
       path: '/*',
       name: 'home',
@@ -50,5 +50,12 @@ const router = new Router({
 //   }
 //   next()
 // })
+
+/**
+ * Track page views for Google Analytics
+ */
+router.afterEach(to => {
+  trackPageView(to)
+})
 
 export default router

@@ -12,47 +12,24 @@
         :refreshing-app="refreshingApp"
         @refresh="serviceWorkerSkipWaiting"
       ></new-content-available-toastr>
-      <apple-add-to-home-screen-modal
-        v-if="showAddToHomeScreenModalForApple"
-        class="apple-add-to-home-screen-modal"
-        @close="closeAddToHomeScreenModalForApple(false)"
-      >
-      </apple-add-to-home-screen-modal>
 
-      <v-snackbar v-model="snackbar">
-        {{ text }}
-
-        <template v-slot:action="{ attrs }">
-          <v-btn color="primary" text v-bind="attrs" @click="snackbar = false">
-            Close
-          </v-btn>
-        </template>
-      </v-snackbar>
+      <cookie-consent></cookie-consent>
     </div>
   </v-app>
 </template>
 <script>
 import NavBar from '@/components/NavBar'
 import NewContentAvailableToastr from '@/components/NewContentAvailableToastr'
-import AppleAddToHomeScreenModal from '@/components/AppleAddToHomeScreenModal'
+import CookieConsent from '@/components/CookieConsent'
 import { mapState, mapActions, mapGetters } from 'vuex'
 
 export default {
-  components: { NavBar, NewContentAvailableToastr, AppleAddToHomeScreenModal },
-
-  data: () => ({
-    snackbar: true,
-    text:
-      'By using Super Effective you consent to the use of third-party cookies for analytics'
-  }),
+  components: { NavBar, NewContentAvailableToastr, CookieConsent },
   computed: {
     ...mapGetters('app', ['newContentAvailable']),
-    ...mapState('app', ['showAddToHomeScreenModalForApple', 'refreshingApp'])
+    ...mapState('app', ['refreshingApp'])
   },
-  methods: mapActions('app', [
-    'closeAddToHomeScreenModalForApple',
-    'serviceWorkerSkipWaiting'
-  ])
+  methods: mapActions('app', ['serviceWorkerSkipWaiting'])
 }
 </script>
 
@@ -80,18 +57,6 @@ body {
       position: absolute;
       bottom: 10px;
       right: 10px;
-    }
-
-    .apple-add-to-home-screen-modal {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      top: 0;
-      left: 0;
-      height: fit-content;
-      width: fit-content;
-      margin: auto;
-      z-index: 1000;
     }
 
     .main-wrapper {

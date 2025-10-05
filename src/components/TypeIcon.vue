@@ -8,7 +8,7 @@
       @click="onClick"
     >
       <v-img
-        alt="Pokeball Logo"
+        :alt="type + ' type icon'"
         class="shrink icon"
         contain
         :src="require('@/assets/type-icons/Type_' + type + '.png')"
@@ -48,11 +48,7 @@ export default Vue.extend({
 
   mounted() {
     if (this.type) {
-      // const fileName =
-      // this.type.charAt(0).toUpperCase() + this.type.substring(1)
       this.img = '@/assets/type-icons/Type_Fire.png'
-
-      console.log()
     }
   },
 
@@ -71,11 +67,6 @@ export default Vue.extend({
       }
 
       return ret
-      // return this.effectiveColor
-      //   ? this.effectiveColor
-      //   : this.selected
-      //   ? 'blue'
-      //   : ''
     },
 
     textColor() {

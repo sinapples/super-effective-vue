@@ -12,14 +12,16 @@ module.exports = {
       new BundleAnalyzerPlugin({
         analyzerMode: 'disabled',
         generateStatsFile: true
-      }),
-      /* See https://github.com/chrisvfritz/prerender-spa-plugin for more details */
-      new PrerenderSPAPlugin({
-        // Required - The path to the webpack-outputted app to prerender.
-        staticDir: path.join(__rootDirname),
-        // Required - Routes to prerender.
-        routes: prerenderedRoutesList
       })
+      // Prerendering disabled due to Puppeteer compatibility issues with Node.js 22
+      // Re-enable when upgrading dependencies or using older Node.js version
+      /* See https://github.com/chrisvfritz/prerender-spa-plugin for more details */
+      // new PrerenderSPAPlugin({
+      //   // Required - The path to the webpack-outputted app to prerender.
+      //   staticDir: path.join(__rootDirname),
+      //   // Required - Routes to prerender.
+      //   routes: prerenderedRoutesList
+      // })
     ]
   }
 }

@@ -20,6 +20,7 @@
           target="_blank"
           class="mr-2 noCap"
           color="white"
+          @click="trackVoiceClick('alexa')"
         >
           <v-icon class="mr-2" color="blue lighten-2">mdi-amazon-alexa</v-icon>
           Alexa</v-btn
@@ -29,6 +30,7 @@
           target="_blank"
           color="white"
           class="mr-2 noCap"
+          @click="trackVoiceClick('google_assistant')"
         >
           <!-- <v-icon class="mr-2">mdi-google-assistant</v-icon> -->
           <v-img
@@ -44,6 +46,20 @@
     </div>
   </v-card>
 </template>
+
+<script>
+import { trackVoiceAssistant } from '@/utils/analytics'
+
+export default {
+  name: 'VoiceInfo',
+
+  methods: {
+    trackVoiceClick(platform) {
+      trackVoiceAssistant(platform)
+    }
+  }
+}
+</script>
 
 <style scoped>
 .noCap {

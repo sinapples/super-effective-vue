@@ -17,6 +17,7 @@
           <v-col cols="auto">
             <v-list-item-avatar class="ma-3" size="125" right rounded>
               <v-img
+                alt="Josh Lopez, developer of Super Effective"
                 src="https://firebasestorage.googleapis.com/v0/b/super-effective-eea44.appspot.com/o/photo-squashed.JPG?alt=media&token=b55d8a0c-bacf-40df-901c-c084a183ced0"
               ></v-img>
             </v-list-item-avatar>
@@ -63,6 +64,7 @@
         href="https://venmo.com/code?user_id=2003272562900992908"
         target="_blank"
         dark
+        @click="trackDonationClick('venmo')"
       >
         Venmo
       </v-btn>
@@ -72,6 +74,7 @@
         href="https://www.paypal.me/sinapples?locale.x=en_US"
         target="_blank"
         dark
+        @click="trackDonationClick('paypal')"
       >
         PayPal
       </v-btn>
@@ -80,6 +83,7 @@
         class="mr-2"
         href="https://www.buymeacoffee.com/sinapples"
         target="_blank"
+        @click="trackDonationClick('buymeacoffee')"
       >
         Buy Me Boba
       </v-btn>
@@ -90,9 +94,16 @@
 
 <script>
 import { mapState } from 'vuex'
+import { trackDonation } from '@/utils/analytics'
 
 export default {
-  computed: mapState('app', ['appTitle'])
+  computed: mapState('app', ['appTitle']),
+
+  methods: {
+    trackDonationClick(platform) {
+      trackDonation(platform)
+    }
+  }
 }
 </script>
 
