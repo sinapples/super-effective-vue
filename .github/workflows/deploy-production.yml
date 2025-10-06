@@ -53,6 +53,6 @@ jobs:
       - name: Deploy project to firebase
         uses: w9jds/firebase-action@v14.18.0
         with:
-          args: deploy --non-interactive
+          args: deploy --only hosting --project super-effective-eea44 --non-interactive
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

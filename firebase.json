@@ -1,8 +1,13 @@
 {
-  "firestore": {
-    "rules": "./src/firebase/firestore.rules"
-  },
   "hosting": {
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
     "headers": [
       {
         "source": "/service-worker.js",
@@ -39,14 +44,6 @@
             "value": "max-age=300"
           }
         ]
-      }
-    ],
-    "public": "dist/",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
       }
     ]
   }
