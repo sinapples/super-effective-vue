@@ -14,7 +14,7 @@ jobs:
           node-version: 18
           cache: 'npm'
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
         # run: npm ci --cache-min=9999 --no-audit --progress=false
       # - name: Check linter
       #   run: npm run lint
@@ -24,6 +24,8 @@ jobs:
       #   run: npm run test:e2e:headless
       - name: Build project
         run: npm run build
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
       # - name: Check bundle size
       #   run: npm run bundlesize
       - name: Upload build
@@ -49,7 +51,7 @@ jobs:
           name: build
           path: dist
       - name: Deploy project to firebase
-        uses: w9jds/firebase-action@master
+        uses: w9jds/firebase-action@v13
         with:
           args: deploy --non-interactive
         env:
