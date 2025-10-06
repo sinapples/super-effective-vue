@@ -7,7 +7,6 @@ import router from './router'
 import store from './store'
 import '@/misc/register-service-worker'
 import '@/misc/handle-network-status'
-import '@/firebase/init'
 
 import 'pwacompat'
 import vuetify from './plugins/vuetify'

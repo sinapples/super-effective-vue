@@ -15,7 +15,6 @@
   "dependencies": {
     "@mdi/font": "5.9.55",
     "core-js": "^3.9.1",
-    "firebase": "^6.6.2",
     "lodash": "^4.17.21",
     "pwacompat": "^2.0.17",
     "register-service-worker": "^1.7.2",
