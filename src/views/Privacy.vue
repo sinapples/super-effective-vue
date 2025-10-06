@@ -246,24 +246,6 @@
                     >josh@supereffective.tips</a
                   >
                 </li>
-                <li>
-                  GitHub:
-                  <a
-                    href="https://github.com/sinapples"
-                    target="_blank"
-                    rel="noopener"
-                    >@sinapples</a
-                  >
-                </li>
-                <li>
-                  Twitter:
-                  <a
-                    href="https://twitter.com/sinapples"
-                    target="_blank"
-                    rel="noopener"
-                    >@sinapples</a
-                  >
-                </li>
               </ul>
             </section>
 

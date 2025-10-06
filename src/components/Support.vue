@@ -94,7 +94,7 @@
 
     <v-card-text class="text-center white--text py-6">
       <h3 class="text-h6 mb-3">Contact Me</h3>
-      <p class="mb-2">Have questions, feedback, or feature requests? I'd love to hear from you!</p>
+      <p class="mb-2">Have questions, feedback, or feature requests?<br>I'd love to hear from you!</p>
       <v-btn
         color="primary"
         href="mailto:josh@supereffective.tips?subject=Super Effective - Feature Request"
@@ -105,6 +105,47 @@
         josh@supereffective.tips
       </v-btn>
     </v-card-text>
+
+    <v-divider dark></v-divider>
+
+    <v-card-text class="text-center white--text py-6">
+      <!-- Footer Links -->
+      <div class="footer-links mb-4">
+        <router-link to="/privacy" class="white--text footer-link">
+          Privacy Policy
+        </router-link>
+        <span class="mx-2">•</span>
+        <a
+          href="mailto:josh@supereffective.tips"
+          class="white--text footer-link"
+        >
+          Contact
+        </a>
+      </div>
+
+      <!-- Social Icons & Copyright -->
+      <div class="d-flex align-center justify-center mb-3">
+        <v-btn
+          icon
+          small
+          href="https://www.instagram.com/sinapples"
+          target="_blank"
+          rel="noopener"
+          class="mx-1"
+          color="white"
+        >
+          <v-icon>mdi-instagram</v-icon>
+        </v-btn>
+        <div class="white--text ml-3 text-caption">
+          © {{ currentYear }} Super Effective
+        </div>
+      </div>
+
+      <!-- Attribution -->
+      <div class="white--text text-caption">
+        Made with ❤️ by Josh Lopez
+      </div>
+    </v-card-text>
   </v-card>
 </template>
 
@@ -113,7 +154,12 @@ import { mapState } from 'vuex'
 import { trackDonation } from '@/utils/analytics'
 
 export default {
-  computed: mapState('app', ['appTitle']),
+  computed: {
+    ...mapState('app', ['appTitle']),
+    currentYear() {
+      return new Date().getFullYear()
+    }
+  },
 
   methods: {
     trackDonationClick(platform) {
@@ -126,5 +172,15 @@ export default {
 <style lang="scss" scoped>
 span.line {
   display: inline-block;
+}
+
+.footer-link {
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
 }
 </style>
