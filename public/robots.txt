@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://super-effective.app/sitemap.xml
+Sitemap: https://supereffective.tips/sitemap.xml

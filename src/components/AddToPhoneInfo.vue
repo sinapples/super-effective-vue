@@ -58,24 +58,14 @@
           <v-icon color="success" large>mdi-check-circle</v-icon>
           <div class="subtitle-1 mt-2">App is already installed!</div>
         </div>
-
-        <!-- Version History -->
-        <v-divider class="my-4" dark></v-divider>
-        <version-history />
       </v-card-text>
     </div>
   </v-card>
 </template>
 
 <script>
-import VersionHistory from './VersionHistory.vue'
-
 export default {
   name: 'AddToPhoneInfo',
-
-  components: {
-    VersionHistory
-  },
 
   data() {
     return {

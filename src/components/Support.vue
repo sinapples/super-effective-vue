@@ -89,6 +89,22 @@
       </v-btn>
       <v-spacer />
     </v-card-actions>
+
+    <v-divider dark></v-divider>
+
+    <v-card-text class="text-center white--text py-6">
+      <h3 class="text-h6 mb-3">Contact Me</h3>
+      <p class="mb-2">Have questions, feedback, or feature requests? I'd love to hear from you!</p>
+      <v-btn
+        color="primary"
+        href="mailto:josh@supereffective.tips?subject=Super Effective - Feature Request"
+        class="mt-2"
+        outlined
+      >
+        <v-icon left>mdi-email</v-icon>
+        josh@supereffective.tips
+      </v-btn>
+    </v-card-text>
   </v-card>
 </template>
 

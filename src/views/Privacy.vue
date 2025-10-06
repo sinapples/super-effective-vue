@@ -240,6 +240,13 @@
               </p>
               <ul class="ml-6">
                 <li>
+                  Email:
+                  <a
+                    href="mailto:josh@supereffective.tips"
+                    >josh@supereffective.tips</a
+                  >
+                </li>
+                <li>
                   GitHub:
                   <a
                     href="https://github.com/sinapples"
@@ -301,7 +308,7 @@ export default {
           content: 'index, follow'
         }
       ],
-      link: [{ rel: 'canonical', href: 'https://super-effective.app/privacy' }]
+      link: [{ rel: 'canonical', href: 'https://supereffective.tips/privacy' }]
     }
   },
 

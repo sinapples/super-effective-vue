@@ -2,17 +2,15 @@
   <v-row class="justify-center">
     <v-card max-width="500">
       <v-card-title class="justify-center black--text mb-2 mx-0 px-0">
-        <h3>
+        <h1 class="text-h5">
           Welcome to Super Effective
-        </h3>
+        </h1>
       </v-card-title>
       <!-- </v-sheet> -->
 
       <v-card-subtitle class="mx-2 mx-2 black--text">
         <div class="my-0">
-          Select the Pokemon's type and
-          <br />
-          Find out what it's weak to
+          Select the Pokemon's type and find out what it's weak to. Search from 1000+ Pokemon or select type combinations to discover what beats what in battle.
         </div>
       </v-card-subtitle>
 
@@ -174,6 +172,42 @@
             </v-expansion-panel-content>
           </v-sheet>
         </v-expansion-panel>
+        <v-expansion-panel>
+          <v-expansion-panel-header color="secondary lighten-1" ripple>
+            <h2 class="text-center white--text">
+              About Super Effective
+            </h2>
+            <template v-slot:actions>
+              <v-icon color="white">
+                $expand
+              </v-icon>
+            </template>
+          </v-expansion-panel-header>
+          <v-sheet color="secondary lighten-2">
+            <v-expansion-panel-content>
+              <v-card-text class="white--text about-content">
+                <h3 class="text-h6 mb-3">Pokemon Type Weakness Calculator</h3>
+                <p class="mb-3">
+                  Our type effectiveness calculator shows weaknesses, resistances, and immunities for all 18 Pokemon types across main series games and Pokemon GO. Perfect for competitive battles and building winning teams.
+                </p>
+                <h3 class="text-h6 mb-3 mt-4">How Pokemon Type Matchups Work</h3>
+                <p class="mb-3">
+                  Pokemon type matchups determine battle outcomes. Super effective moves deal 2x damage (or 4x for dual-type weaknesses), while not very effective moves deal 0.5x damage. Understanding type advantages like Fire beating Grass, Water countering Fire, and Dragon resisting common types is essential for competitive Pokemon battles.
+                </p>
+                <h3 class="text-h6 mb-3 mt-4">Features</h3>
+                <ul class="features-list mb-2">
+                  <li>Search 1000+ Pokemon by name to see their weaknesses</li>
+                  <li>Select single or dual types for custom matchup analysis</li>
+                  <li>View super effective counters, resistances, and immunities</li>
+                  <li>Includes Pokemon GO and main series game multipliers</li>
+                  <li>Install as PWA for offline type chart access</li>
+                </ul>
+                <v-divider class="my-4" dark></v-divider>
+                <version-history />
+              </v-card-text>
+            </v-expansion-panel-content>
+          </v-sheet>
+        </v-expansion-panel>
       </v-expansion-panels>
     </v-card>
   </v-row>
@@ -187,6 +221,7 @@ import { trackTypeSelection } from '@/utils/analytics'
 import TypeIcon from './TypeIcon.vue'
 import SearchPokemon from './SearchPokemon.vue'
 import AddToPhoneInfo from './AddToPhoneInfo.vue'
+import VersionHistory from './VersionHistory.vue'
 
 export default Vue.extend({
   name: 'Dashboard',
@@ -194,7 +229,8 @@ export default Vue.extend({
   components: {
     TypeIcon,
     SearchPokemon,
-    AddToPhoneInfo
+    AddToPhoneInfo,
+    VersionHistory
   },
 
   data: () => ({
@@ -307,5 +343,28 @@ export default Vue.extend({
 <style scoped>
 span.line {
   display: inline-block;
+}
+
+.about-content {
+  text-align: left;
+}
+
+.about-content h3 {
+  text-align: left;
+}
+
+.about-content p {
+  text-align: left;
+  line-height: 1.6;
+}
+
+.features-list {
+  padding-left: 20px;
+  list-style-position: outside;
+}
+
+.features-list li {
+  margin-bottom: 8px;
+  text-align: left;
 }
 </style>

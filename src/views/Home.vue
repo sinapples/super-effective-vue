@@ -39,7 +39,7 @@ export default {
       link: [
         {
           rel: 'canonical',
-          href: 'https://super-effective.app/'
+          href: 'https://supereffective.tips/'
         }
       ]
     }
