@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "super-effective-eea44",
     "public": "dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
